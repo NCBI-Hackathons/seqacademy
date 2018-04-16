@@ -1,7 +1,10 @@
 # omicsedu
-Self-guided multiomics educational workshop
 
 ![lol](images/logo.png)
+
+# What is this?
+
+This is an educational pipeline for RNA-Seq and epigenomics analysis. It uses jupyter notebook.
 
 # Authors
 
