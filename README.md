@@ -6,9 +6,9 @@
 
 This is an educational pipeline for RNA-Seq and epigenomics analysis. It uses jupyter notebook.
 
-# RNA-Seq
+![Alignment](images/alignment.png)
 
-![RNA-Seq Workflow](images/rnaseqpipeline.png)
+# RNA-Seq
 
 # ChIP-Seq
 
