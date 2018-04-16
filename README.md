@@ -23,5 +23,3 @@ This is an educational pipeline for RNA-Seq and epigenomics analysis. It uses ju
 + Tamiru Denka 
 
 + Stephen Semick (stephen.semick@libd.org)
-
-+ Samantha Sevilla (samantha.sevilla@nih.gov)
