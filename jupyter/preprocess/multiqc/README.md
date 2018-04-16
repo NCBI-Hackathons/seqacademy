@@ -1,4 +1,3 @@
-Perform MultiQC on the raw data
+MULTIQC OPTIONAL ANALYSIS
 
-We need to test to see if this is working
-Let's find out
+multiQC requires fastq files and if they are already downloaded can be checked for data quality.
