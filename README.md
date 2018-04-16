@@ -25,3 +25,5 @@ This is an educational pipeline for RNA-Seq and epigenomics analysis. It uses ju
 + Stephen Semick (stephen.semick@libd.org)
 
 + Wanhu Tang (tangw2@niaid.nih.gov)
+
++ TJ Butler (tjbutler003@gmail.com)
