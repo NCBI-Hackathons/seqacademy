@@ -6,6 +6,14 @@
 
 This is an educational pipeline for RNA-Seq and epigenomics analysis. It uses jupyter notebook.
 
+# RNA-Seq
+
+![RNA-Seq Workflow](images/rnaseqpipeline.png)
+
+# ChIP-Seq
+
+
+
 # To-do
 
 + Add Docker-level containerization
