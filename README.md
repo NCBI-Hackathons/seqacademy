@@ -6,7 +6,7 @@
 
 OmicsEdu is an educational pipeline for RNA-Seq and epigenomics analysis. It uses jupyter notebook.
 
-It works using HISAT aligner to align sample reads to a reference.
+It works using HISAT2 aligner to align sample reads to a reference.
 
 ![Alignment](images/alignment.png)
 
@@ -17,6 +17,8 @@ It uses quantification methods (salmon for RNA-Seq and peak-calling for ChIP-Seq
 The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq). 
 
 Finally the results are visualized.
+
+The model organism for this project is Yeast i.e. Saccharomyces cerevisiae.
 
 # RNA-Seq
 
