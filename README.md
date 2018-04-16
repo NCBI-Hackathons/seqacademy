@@ -6,7 +6,17 @@
 
 This is an educational pipeline for RNA-Seq and epigenomics analysis. It uses jupyter notebook.
 
+It works using HISAT aligner to align sample reads to a reference.
+
 ![Alignment](images/alignment.png)
+
+Then it performs MultiQC to extract quality control information from the aligned reads.
+
+It uses quantification methods (salmon for RNA-Seq and peak-calling for ChIP-Seq) to quantify expression and determine protein-binding. 
+
+The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq). 
+
+Finally the results are visualized.
 
 # RNA-Seq
 
