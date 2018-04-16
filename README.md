@@ -24,9 +24,11 @@ The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i
 
 # RNA-Seq
 
+This is where we will put sample RNA-Seq input and output.
+
 # ChIP-Seq
 
-
+This is where we will put sample ChIP-Seq input and output. 
 
 # To-do
 
