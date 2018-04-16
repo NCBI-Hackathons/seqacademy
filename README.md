@@ -1,6 +1,6 @@
 # OmicsEdu
 
-![Logo](logo.png)
+![Logo](images/logo.png)
 
 # What is this?
 
