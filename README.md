@@ -18,7 +18,7 @@ The output is analyzed (differential gene expression for RNA-Seq and peak analys
 
 Finally the results are visualized.
 
-The model organism for this project is Yeast i.e. Saccharomyces cerevisiae.
+The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i>.
 
 # RNA-Seq
 
