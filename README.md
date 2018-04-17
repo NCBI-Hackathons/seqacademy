@@ -49,7 +49,7 @@ In this project, we present OmicsEdu, a user-friendly jupyter notebook-based edu
 <br />
 With this tool, we hope that researchers of all categories of experience level will be able to easily analyse their epigenomic and RNA-Seq data.
 
-<b>Keywords</b>
+<b>Keywords</b>:
 <i>RNA-Seq, ChIP-Seq, education, alignment, assembly</i>
 
 # Authors
