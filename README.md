@@ -53,15 +53,9 @@ With this tool, we hope that researchers of all categories of experience level w
 <i>RNA-Seq, ChIP-Seq, education, alignment, assembly</i>
 
 # Authors
-
 + Syed Hussain Ather (shussainather@gmail.com)
-
 + Olaitan Awe (laitanawe@gmail.com)
-
 + Tamiru Denka (tamiru.dank@nih.gov)
-
 + Stephen Semick (stephen.semick@libd.org)
-
 + Wanhu Tang (tangw2@niaid.nih.gov)
-
 + TJ Butler (tjbutler003@gmail.com)
