@@ -6,7 +6,7 @@
 
 OmicsEdu is an educational pipeline for RNA-Seq and epigenomics analysis. It uses jupyter notebook.
 
-![Workflow](images/workflow.png)
+![Workflow](images/pipeline.png)
 
 It works using HISAT2 aligner to align sample reads to a reference.
 
