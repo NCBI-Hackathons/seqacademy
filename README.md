@@ -40,6 +40,18 @@ This is where we will put sample ChIP-Seq input and output.
 
 + Test
 
+# Abstract
+Quantification of gene expression and characterization of gene transcript structures are central problems in molecular biology. RNA Sequencing (RNA-Seq) and Chromatin Immuno-Precipitation Sequencing (ChIP-seq) experiments generate large amounts of data that necessitate pipelines to analyze these data in an efficient manner and therefore gain insight.
+<br />
+Existing tools target specific tasks in the analysis pipeline such as quality control or mapping, while others offer an all-in-one solution but these tools are more geared towards the advanced users.
+<br />
+In this project, we present OmicsEdu, a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis and our goal was to build a tool which is easy to use even with no programming experience.
+<br />
+With this tool, we hope that researchers of all categories of experience level will be able to easily analyse their epigenomic and RNA-Seq data.
+
+<b>Keywords</b>
+<i>RNA-Seq, ChIP-Seq, education, alignment, assembly</i>
+
 # Authors
 
 + Syed Hussain Ather (shussainather@gmail.com)
