@@ -2,7 +2,13 @@
 ### An easy-to-use, all-in-one jupyter notebook tutorial for the RNAseq and ChIPseq pipeline
 ![Logo](images/seqacademy.png)
 
-I'm in! Get me started! Download our <a href="https://github.com/NCBI-Hackathons/seqacademy/blob/master/tutorial.ipynb">jupyter notebook</a>
+#### Ready to get going?
+<b>FIRST, we need to download TWO things:</b>
+1.<a href="https://www.anaconda.com/download/#windows">Anaconda</a> (choose the correct OS version, python 3.6, it will automatically come with Jupyter Notebook)
+2.Our Jupyter Notebook file, tutorial.ipynb
+To download the jupyter notebook, click on the link above which takes you to the jupyter notebook page.  Note that you can review the notebook as a STATIC document here, but we want to RUN IT!  So click the button labeled "Raw" at the right on the top of the document, which shows the actual .ipynb text file.  Right-click and save, and make sure to change "File type" to "All Files" since we are not saving a text file, we are saving a .ipynb file. 
+<br />
+After downloading Anaconda, OPEN it, OPEN Jupyter Notebook (which will open in your default web browser), FIND the jupyter notebook you downloaded, OPEN it, and START LEARNING!
 <br />
 <b>Keywords</b>:
 <i>RNA-Seq, ChIP-Seq, alignment, assembly, education, tutorial, pipeline</i>
@@ -45,7 +51,7 @@ If you run into a warning about the connection's privacy, proceed anyway.
 
 # What are the steps of this tutorial?
 
-![Workflow](images/workflow.png)
+![Pipeline](images/pipeline.png)
 
 This tutorial works using HISAT2 aligner to align sample reads to a reference.
 
