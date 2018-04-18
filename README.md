@@ -10,21 +10,25 @@
 2. Our Jupyter Notebook file, tutorial.ipynb
 
 To download the jupyter notebook, click on the link above which takes you to the jupyter notebook page.  Note that you can review the notebook as a STATIC document here, but we want to RUN IT!  So click the button labeled "Raw" at the right on the top of the document, which shows the actual .ipynb text file.  Right-click and save, and make sure to change "File type" to "All Files" since we are not saving a text file, we are saving a .ipynb file. 
-<br />
+
 After downloading Anaconda, OPEN it, OPEN Jupyter Notebook (which will open in your default web browser), FIND the jupyter notebook you downloaded, OPEN it, and START LEARNING!
-<br />
+
 <b>Keywords</b>:
 <i>RNA-Seq, ChIP-Seq, alignment, assembly, education, tutorial, pipeline</i>
 
 ## What is SeqAcademy?
+
 SeqAcademy is a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis.
+
 <br />
 RNA-Seq and ChIP-Seq experiments generate large amounts of data and rely on pipelines for efficient analysis.  However, existing tools perform specific portions of the pipeline or offer a complete pipeline solution for the advanced programmer.
+
 <br />
 SeqAcademy addresses these problems by providing an easy to use tutorial that outlines the complete RNA-Seq and ChIP-Seq analysis workflow and requires no prior programming experience.  
 
 ## Who is SeqAcademy for?
-With this tool, we hope that students, researchers, and even those with limited bioinformatics experience will feel comfortable analyzing their own epigenomic and RNA-Seq data.
+
+SeqAcademy is for students and researchers with little to no bioinformatics experience interested in hands-on bioinformatics tutorials.  Anyone will feel comfortable analyzing epigenomic and RNA-Seq data using this simple educational tool.
 
 ## How do I use SeqAcademy?
 
