@@ -29,6 +29,8 @@ With this tool, we hope that students, researchers, and even those with limited 
 
 5. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git`
 
+![Git clone](images/gitclone.png)
+
 6. Run `cd seqacademy`.
 
 7. Run `jupyter notebook` to launch jupyter notebook from your internet browser.
