@@ -7,4 +7,4 @@ The directories should be run in the following order:
 
 + chipseq or rnaseq
 
-![jupyter overview](../images/jupyteroview.png)
+![jupyter overview](../images/jupyteroverview.png)
