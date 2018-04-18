@@ -22,11 +22,13 @@ This tutorial works using HISAT2 aligner to align sample reads to a reference.
 
 Then it performs MultiQC to extract quality control information from the aligned reads.
 
+![QC report](images/qc.png)
+
 It uses quantification methods (salmon for RNA-Seq and peak-calling for ChIP-Seq) to quantify expression and determine protein-binding. 
 
-The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq). 
+![Quantify](images/quantification.png)
 
-Finally the results are visualized.
+The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq), and the results are visualized.
 
 The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i>. For RNA-Seq, yeast data between euploid and aneuoploid conditions will be compared. For ChIP-SEq, yeast data between 3AT-treated and untreated conditions will be compared.
 
