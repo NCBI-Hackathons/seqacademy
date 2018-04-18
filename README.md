@@ -17,7 +17,7 @@ SeqAcademy addresses these problems by providing an easy to use tutorial that ou
 ## Who is SeqAcademy for?
 With this tool, we hope that students, researchers, and even those with limited bioinformatics experience will feel comfortable analyzing their own epigenomic and RNA-Seq data.
 
-## How do I use this tutorial?
+## How do I use SeqAcademy?
 
 1. Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online. 
 
@@ -28,6 +28,8 @@ With this tool, we hope that students, researchers, and even those with limited 
 4. Download anaconda (https://www.anaconda.com/download/) and jupyter notebook (http://jupyter.readthedocs.io/en/latest/install.html) 
 
 5. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git`
+
+![Git clone](images/gitclone.png)
 
 6. Run `cd seqacademy`.
 
@@ -90,7 +92,7 @@ The following data presents the ChIP-Seq data used in this tutorial.
 | 150        | SAMN08513511 | SRX3677837 | 6918   | 3140   | SRR6703663 | SRS2938499 | GSM2991011  | MATa ade2-1 can1-100 leu2-3,112 trp1-1 ura3-1 | 3AT-treated for 40 min | YDC111 | RNA-Seq    | PRJNA433659 | GEO         | public  | sra                | ncbi               | 0          | NextSeq 500 | PAIRED        | cDNA             | TRANSCRIPTOMIC | 2018-02-09 | Saccharomyces cerevisiae | ILLUMINA | 2018-02-27  | SRP132584 | 
 
 # Authors
-+ Syed Hussain Ather (shussainather@gmail.com)
++ Syed Hussain Ather (shussainather@gmail.com) (http://hussainather.com)
 + Olaitan Awe (laitanawe@gmail.com)
 + TJ Butler (tjbutler003@gmail.com)
 + Tamiru Denka (tamiru.dank@nih.gov)
