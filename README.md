@@ -94,6 +94,10 @@ The following data presents the RNA-Seq data used in this tutorial.
 
 # ChIP-Seq
 
+![IGV 1](images/igv1.png)
+
+![IGV 2](images/igv2.png)
+
 The following data presents the ChIP-Seq data used in this tutorial. 
 
 |            |              |            |        |        |            |            |             |                                               |                        |        |            |             |             |         |                    |                    |            |             |               |                  |                |            |                          |          |             |           | 
