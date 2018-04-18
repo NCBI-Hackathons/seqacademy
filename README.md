@@ -26,7 +26,7 @@ Then it performs MultiQC to extract quality control information from the aligned
 
 It uses quantification methods (salmon for RNA-Seq and peak-calling for ChIP-Seq) to quantify expression and determine protein-binding. 
 
-![Quantify](images/quantification.png)
+![Quantify](images/quantify.png)
 
 The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq), and the results are visualized.
 
