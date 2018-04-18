@@ -1,5 +1,5 @@
 # SeqAcademy
-
+### An easy-to-use, all-in-one tutorial for the RNAseq and ChIPseq pipeline
 ![Logo](images/seqacademy.png)
 
 # What is SeqAcademy?
