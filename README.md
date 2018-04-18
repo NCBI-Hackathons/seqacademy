@@ -34,12 +34,6 @@ This is where we will put sample ChIP-Seq input and output.
 
 + Add Docker-level containerization
 
-+ Write-up 
-
-+ Create Jupyter notebook overview
-
-+ Test
-
 # Abstract
 Quantification of gene expression and characterization of gene transcript structures are central problems in molecular biology. RNA Sequencing (RNA-Seq) and Chromatin Immuno-Precipitation Sequencing (ChIP-seq) experiments generate large amounts of data that necessitate pipelines to analyze these data in an efficient manner and therefore gain insight.
 <br />
