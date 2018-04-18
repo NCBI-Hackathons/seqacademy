@@ -34,7 +34,7 @@ With this tool, we hope that researchers of all categories of experience level w
 
 # What are the steps of this tutorial?
 
-![Workflow](images/pipeline.png)
+![Workflow](images/workflow.png)
 
 This tutorial works using HISAT2 aligner to align sample reads to a reference.
 
