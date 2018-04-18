@@ -4,8 +4,7 @@
 
 ### System requirements:
 
-#### Ready to get going?
-[Jump to "How do I use SeqAcademy?" and get started!](#how-do-i-use-seqacademy)
+[Ready to get going? Jump to "How do I use SeqAcademy?" and get started!](#how-do-i-use-seqacademy)
 
 <b>Keywords</b>:
 <i>RNA-Seq, ChIP-Seq, alignment, assembly, education, tutorial, pipeline</i>
@@ -89,7 +88,7 @@ The following data presents the RNA-Seq data used in this tutorial.
 
 ![PCA 2](images/pca2.png)
 
-![Volcano plot](images/volcanoplot.png)
+![Volcano plot](images/volcano_plot.png)
 
 # ChIP-Seq
 
