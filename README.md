@@ -2,7 +2,8 @@
 ### An easy-to-use, all-in-one jupyter notebook tutorial for the RNAseq and ChIPseq pipeline
 ![Logo](images/seqacademy.png)
 
-### System requirements:
+#### We recommend at least 4 processors with at least 16 GB RAM each
+#### Total disk space required (includes large SAM files): 350 GB
 
 [Ready to get going? Jump to "How do I use SeqAcademy?" and get started!](#how-do-i-use-seqacademy)
 
