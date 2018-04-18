@@ -14,7 +14,6 @@ With this tool, we hope that researchers of all categories of experience level w
 <b>Keywords</b>:
 <i>RNA-Seq, ChIP-Seq, education, alignment, assembly</i>
 
-
 # How do I use this tutorial?
 
 1. Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online. 
@@ -31,7 +30,7 @@ With this tool, we hope that researchers of all categories of experience level w
 
 7. Run `jupyter notebook` to launch jupyter notebook.
 
-8. Click `jupyter`, then `tutorial.ipynb` and follow the instructions of the tutorial.
+8. Click `jupyter`, then `tutorial.ipynb` and follow the instructions of the tutorial. 
 
 # What are the steps of this tutorial?
 
