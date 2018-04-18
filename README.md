@@ -14,23 +14,6 @@ With this tool, we hope that researchers of all categories of experience level w
 <b>Keywords</b>:
 <i>RNA-Seq, ChIP-Seq, education, alignment, assembly</i>
 
-![Workflow](images/pipeline.png)
-
-This tutorial works using HISAT2 aligner to align sample reads to a reference.
-
-![Alignment](images/alignment.png)
-
-Then it performs MultiQC to extract quality control information from the aligned reads.
-
-![QC report](images/qc.png)
-
-It uses quantification methods (salmon for RNA-Seq and peak-calling for ChIP-Seq) to quantify expression and determine protein-binding. 
-
-![Quantify](images/quantify.png)
-
-The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq), and the results are visualized.
-
-The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i>. For RNA-Seq, yeast data between euploid and aneuoploid conditions will be compared. For ChIP-SEq, yeast data between 3AT-treated and untreated conditions will be compared.
 
 # How do I use this tutorial?
 
@@ -50,7 +33,31 @@ The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i
 
 8. Click `jupyter`, then `tutorial.ipynb` and follow the instructions of the tutorial.
 
-# RNA-Seq
+# What are the steps of this tutorial?
+
+![Workflow](images/pipeline.png)
+
+This tutorial works using HISAT2 aligner to align sample reads to a reference.
+
+![Alignment](images/alignment.png)
+
+Then it performs MultiQC to extract quality control information from the aligned reads.
+
+![QC report](images/qc.png)
+
+It uses quantification methods (salmon for RNA-Seq and peak-calling for ChIP-Seq) to quantify expression and determine protein-binding. 
+
+![Quantify](images/quantify.png)
+
+The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq), and the results are visualized.
+
+
+The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i>. For RNA-Seq, yeast data between euploid and aneuoploid conditions will be compared. For ChIP-SEq, yeast data between 3AT-treated and untreated conditions will be compared.
+
+## RNA-Seq
+
+The following data presents the RNA-Seq data used in this tutorial. 
+
 |              |            |        |        |            |            |             |           |           |            |            |             |             |         |                    |                    |            |                     |               |                  |                |            |                          |          |             |           |             |        | 
 |--------------|------------|--------|--------|------------|------------|-------------|-----------|-----------|------------|------------|-------------|-------------|---------|--------------------|--------------------|------------|---------------------|---------------|------------------|----------------|------------|--------------------------|----------|-------------|-----------|-------------|--------| 
 | BioSample    | Experiment | MBases | MBytes | Run        | SRA_Sample | Sample_Name | karyotype | replicate | Assay_Type | AvgSpotLen | BioProject  | Center_Name | Consent | DATASTORE_filetype | DATASTORE_provider | InsertSize | Instrument          | LibraryLayout | LibrarySelection | LibrarySource  | LoadDate   | Organism                 | Platform | ReleaseDate | SRA_Study | source_name | strain | 
@@ -62,8 +69,10 @@ The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i
 | SAMN06859206 | SRX2775586 | 1152   | 407    | SRR5494632 | SRS2158882 | GSM2595343  | Euploid   | Third     | RNA-Seq    | 51         | PRJNA385090 | GEO         | public  | sra                | ncbi               | 0          | Illumina HiSeq 2500 | SINGLE        | cDNA             | TRANSCRIPTOMIC | 2017-05-02 | Saccharomyces cerevisiae | ILLUMINA | 2017-09-12  | SRP106028 | Yeast cells | S288c  | 
 
 
-
 # ChIP-Seq
+
+The following data presents the ChIP-Seq data used in this tutorial. 
+
 |            |              |            |        |        |            |            |             |                                               |                        |        |            |             |             |         |                    |                    |            |             |               |                  |                |            |                          |          |             |           | 
 |------------|--------------|------------|--------|--------|------------|------------|-------------|-----------------------------------------------|------------------------|--------|------------|-------------|-------------|---------|--------------------|--------------------|------------|-------------|---------------|------------------|----------------|------------|--------------------------|----------|-------------|-----------| 
 | AvgSpotLen | BioSample    | Experiment | MBases | MBytes | Run        | SRA_Sample | Sample_Name | genotype                                      | source_name            | strain | Assay_Type | BioProject  | Center_Name | Consent | DATASTORE_filetype | DATASTORE_provider | InsertSize | Instrument  | LibraryLayout | LibrarySelection | LibrarySource  | LoadDate   | Organism                 | Platform | ReleaseDate | SRA_Study | 
