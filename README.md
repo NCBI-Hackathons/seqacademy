@@ -31,7 +31,7 @@ With this tool, we hope that researchers of all categories of experience level w
 
 7. Run `jupyter notebook` to launch jupyter notebook.
 
-8. Click `jupyter`, then `tutorial.ipynb` and follow the instructions of the tutorial. 
+8. Click `tutorial.ipynb` and follow the instructions of the tutorial. 
 
 # What are the steps of this tutorial?
 
