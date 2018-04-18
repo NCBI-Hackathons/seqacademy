@@ -2,8 +2,10 @@
 ### An easy-to-use, all-in-one jupyter notebook tutorial for the RNAseq and ChIPseq pipeline
 ![Logo](images/seqacademy.png)
 
+### System requirements:
+
+
 #### Ready to get going?
-#### Jump to the section 
 [Jump to this section and get started!](#how-do-i-use-seqacademy)
 
 <b>Keywords</b>:
