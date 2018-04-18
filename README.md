@@ -7,6 +7,7 @@ Quantification of gene expression and characterization of gene transcript struct
 <br />
 Existing tools target specific tasks in the analysis pipeline such as quality control or mapping, while others offer an all-in-one solution but these tools are more geared towards the advanced users.
 <br />
+<br />
 In this project, we present OmicsEdu, a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis and our goal was to build a tool which is easy to use even with no programming experience.
 <br />
 With this tool, we hope that researchers of all categories of experience level will be able to easily analyse their epigenomic and RNA-Seq data.
