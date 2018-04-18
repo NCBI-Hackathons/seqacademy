@@ -95,6 +95,8 @@ The following data presents the RNA-Seq data used in this tutorial.
 
 <img src="images/volcanoplot.png" width="600" height="500">
 
+<img src="images/barplot_sig.png" width="600" height="500">
+
 # ChIP-Seq
 
 The following data presents the ChIP-Seq data used in this tutorial. 
