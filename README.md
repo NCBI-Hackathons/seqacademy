@@ -1,5 +1,5 @@
 # SeqAcademy
-### An easy-to-use, all-in-one jupyter notebook tutorial for the RNAseq and ChIPseq pipeline
+### An easy-to-use, all-in-one jupyter notebook tutorial for the RNA-Seq and ChIP-Seq pipeline
 ![Logo](images/seqacademy.png)
 
 ### System requirements:
