@@ -4,7 +4,7 @@
 
 #### Ready to get going?
 #### Jump to the section 
-[Link](#How-do-I-use-SeqAcademy?)Is this the link?
+[Jump to this section and get started!](##How-do-I-use-SeqAcademy?)
 
 <b>Keywords</b>:
 <i>RNA-Seq, ChIP-Seq, alignment, assembly, education, tutorial, pipeline</i>
@@ -88,9 +88,7 @@ The following data presents the RNA-Seq data used in this tutorial.
 
 ![PCA 2](images/pca2.png)
 
-![Volcano plot](images/volcanoplot.png)
-
-![Bar plot](images/barplot_sig.png)
+![Volcano plot](images/volcano_plot.png)
 
 # ChIP-Seq
 
