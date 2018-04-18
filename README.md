@@ -1,19 +1,20 @@
 # SeqAcademy
-### An easy-to-use, all-in-one tutorial for the RNAseq and ChIPseq pipeline
+### An easy-to-use, all-in-one jupyter notebook tutorial for the RNAseq and ChIPseq pipeline
 ![Logo](images/seqacademy.png)
 
 # What is SeqAcademy?
-Quantification of gene expression and characterization of gene transcript structures are central problems in molecular biology. RNA Sequencing (RNA-Seq) and Chromatin Immuno-Precipitation Sequencing (ChIP-seq) experiments generate large amounts of data that necessitate pipelines to analyze these data in an efficient manner and therefore gain insight.
+SeqAcademy is a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis.
 <br />
-Existing tools target specific tasks in the analysis pipeline such as quality control or mapping, while others offer an all-in-one solution but these tools are more geared towards the advanced users.
+RNA-Seq and ChIP-Seq experiments generate large amounts of data and rely on pipelines for efficient analysis.  However, existing tools perform specific portions of the pipeline or offer a complete pipeline solution for the advanced programmer.
 <br />
-<br />
-In this project, we present SeqAcademy, a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis and our goal was to build a tool which is easy to use even with no programming experience.
-<br />
-With this tool, we hope that researchers of all categories of experience level will be able to easily analyse their epigenomic and RNA-Seq data.
+SeqAcademy addresses these problems by providing an easy to use tutorial that outlines the complete RNA-Seq and ChIP-Seq analysis workflow and requires no prior programming experience.  
+
+# Who is SeqAcademy for?
+
+With this tool, we hope that students, researchers, and even those with limited bioinformatics experience will feel comfortable analyzing their own epigenomic and RNA-Seq data.
 
 <b>Keywords</b>:
-<i>RNA-Seq, ChIP-Seq, education, alignment, assembly</i>
+<i>RNA-Seq, ChIP-Seq, alignment, assembly, education, tutorial, pipeline</i>
 
 # How do I use this tutorial?
 
