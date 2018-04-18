@@ -4,7 +4,7 @@
 
 #### Ready to get going?
 #### Jump to the section 
-[Jump to this section and get started!](##How-do-I-use-SeqAcademy?)
+[Jump to this section and get started!](#how-do-i-use-seqacademy)
 
 <b>Keywords</b>:
 <i>RNA-Seq, ChIP-Seq, alignment, assembly, education, tutorial, pipeline</i>
