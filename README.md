@@ -2,10 +2,10 @@
 ### An easy-to-use, all-in-one jupyter notebook tutorial for the RNA-Seq and ChIP-Seq pipeline
 ![Logo](images/seqacademy.png)
 
-### System requirements:
+##### We recommend at least 4 processors with at least 16 GB RAM each
+##### Total disk space required (includes large SAM files): 350 GB
 
-#### Ready to get going?
-[Jump to "How do I use SeqAcademy?" and get started!](#how-do-i-use-seqacademy)
+[Ready to get going? Jump to "How do I use SeqAcademy?" and get started!](#how-do-i-use-seqacademy)
 
 <b>Keywords</b>:
 <i>RNA-Seq, ChIP-Seq, alignment, assembly, education, tutorial, pipeline</i>
@@ -23,7 +23,9 @@ SeqAcademy addresses these problems by providing an easy to use tutorial that ou
 ## Who is SeqAcademy for?
 
 SeqAcademy is for students and researchers with little to no bioinformatics experience interested in hands-on bioinformatics tutorials.  Anyone will feel comfortable analyzing epigenomic and RNA-Seq data using this simple educational tool.
-
+<br /><br />
+Demo Page: <a href="http://asbcb.org/seqacademy.html">Seqacademy</a>
+<br /><br />
 ## How do I use SeqAcademy?
 
 1. Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online. 
@@ -89,7 +91,7 @@ The following data presents the RNA-Seq data used in this tutorial.
 
 ![PCA 2](images/pca2.png)
 
-![Volcano plot](images/volcanoplot.png)
+![Volcano plot](images/volcano_plot.png)
 
 # ChIP-Seq
 
