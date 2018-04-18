@@ -20,12 +20,14 @@ RNA-Seq and ChIP-Seq experiments generate large amounts of data and rely on pipe
 <br />
 SeqAcademy addresses these problems by providing an easy to use tutorial that outlines the complete RNA-Seq and ChIP-Seq analysis workflow and requires no prior programming experience.  
 
+<br /><br />
+<b>Demo: </b><a href="http://asbcb.org/seqacademy.html">SeqAcademy</a>
+<br /><br />
+
 ## Who is SeqAcademy for?
 
 SeqAcademy is for students and researchers with little to no bioinformatics experience interested in hands-on bioinformatics tutorials.  Anyone will feel comfortable analyzing epigenomic and RNA-Seq data using this simple educational tool.
-<br /><br />
-Demo Page: <a href="http://asbcb.org/seqacademy.html">Seqacademy</a>
-<br /><br />
+
 ## How do I use SeqAcademy?
 
 1. Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online. 
