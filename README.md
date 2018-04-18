@@ -88,6 +88,8 @@ The following data presents the RNA-Seq data used in this tutorial.
 
 ![PCA 2](images/pca2.png)
 
+![Volcano plot](images/volcano_plot.png)
+
 # ChIP-Seq
 
 The following data presents the ChIP-Seq data used in this tutorial. 
