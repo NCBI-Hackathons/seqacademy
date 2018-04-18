@@ -92,7 +92,7 @@ The following data presents the ChIP-Seq data used in this tutorial.
 | 150        | SAMN08513511 | SRX3677837 | 6918   | 3140   | SRR6703663 | SRS2938499 | GSM2991011  | MATa ade2-1 can1-100 leu2-3,112 trp1-1 ura3-1 | 3AT-treated for 40 min | YDC111 | RNA-Seq    | PRJNA433659 | GEO         | public  | sra                | ncbi               | 0          | NextSeq 500 | PAIRED        | cDNA             | TRANSCRIPTOMIC | 2018-02-09 | Saccharomyces cerevisiae | ILLUMINA | 2018-02-27  | SRP132584 | 
 
 # Authors
-+ Syed Hussain Ather (shussainather@gmail.com)
++ Syed Hussain Ather (shussainather@gmail.com) (http://hussainather.com)
 + Olaitan Awe (laitanawe@gmail.com)
 + TJ Butler (tjbutler003@gmail.com)
 + Tamiru Denka (tamiru.dank@nih.gov)
