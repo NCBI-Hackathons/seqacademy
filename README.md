@@ -56,19 +56,19 @@ If you run into a warning about the connection's privacy, proceed anyway.
 
 # What are the steps of this tutorial?
 
-![Pipeline](images/pipeline.png)
+<img src="images/pipeline.png" width="700" height="500">
 
 This tutorial works using HISAT2 aligner to align sample reads to a reference.
 
-![Alignment](images/alignment.png)
+<img src="images/alignment.png" width="700" height="500">
 
 Then it performs MultiQC to extract quality control information from the aligned reads.
 
-![QC report](images/qc.png)
+<img src="images/qc.png" width="700" height="500">
 
 It uses quantification methods (such as salmon for RNA-Seq and peak-calling for ChIP-Seq) to quantify expression and determine protein-binding. 
 
-![Quantify](images/quantify.png)
+<img src="images/quantify.png" width="700" height="500">
 
 The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq), and the results are visualized.
 
@@ -89,11 +89,11 @@ The following data presents the RNA-Seq data used in this tutorial.
 | SAMN06859207 | SRX2775585 | 946    | 333    | SRR5494631 | SRS2158881 | GSM2595342  | Euploid   | Second    | RNA-Seq    | 51         | PRJNA385090 | GEO         | public  | sra                | ncbi               | 0          | Illumina HiSeq 2500 | SINGLE        | cDNA             | TRANSCRIPTOMIC | 2017-05-02 | Saccharomyces cerevisiae | ILLUMINA | 2017-09-12  | SRP106028 | Yeast cells | S288c  | 
 | SAMN06859206 | SRX2775586 | 1152   | 407    | SRR5494632 | SRS2158882 | GSM2595343  | Euploid   | Third     | RNA-Seq    | 51         | PRJNA385090 | GEO         | public  | sra                | ncbi               | 0          | Illumina HiSeq 2500 | SINGLE        | cDNA             | TRANSCRIPTOMIC | 2017-05-02 | Saccharomyces cerevisiae | ILLUMINA | 2017-09-12  | SRP106028 | Yeast cells | S288c  | 
 
-![PCA 1](images/pca1.png)
+<img src="images/pca1.png" width="700" height="500">
 
-![PCA 2](images/pca2.png)
+<img src="images/pca2.png" width="700" height="500">
 
-![Volcano plot](images/volcano_plot.png)
+<img src="images/volcanoplot.png" width="700" height="500">
 
 # ChIP-Seq
 
@@ -107,9 +107,9 @@ The following data presents the ChIP-Seq data used in this tutorial.
 | 150        | SAMN08513512 | SRX3677836 | 6049   | 2749   | SRR6703662 | SRS2938498 | GSM2991010  | MATa ade2-1 can1-100 leu2-3,112 trp1-1 ura3-1 | Untreated              | YDC111 | RNA-Seq    | PRJNA433659 | GEO         | public  | sra                | ncbi               | 0          | NextSeq 500 | PAIRED        | cDNA             | TRANSCRIPTOMIC | 2018-02-09 | Saccharomyces cerevisiae | ILLUMINA | 2018-02-27  | SRP132584 | 
 | 150        | SAMN08513511 | SRX3677837 | 6918   | 3140   | SRR6703663 | SRS2938499 | GSM2991011  | MATa ade2-1 can1-100 leu2-3,112 trp1-1 ura3-1 | 3AT-treated for 40 min | YDC111 | RNA-Seq    | PRJNA433659 | GEO         | public  | sra                | ncbi               | 0          | NextSeq 500 | PAIRED        | cDNA             | TRANSCRIPTOMIC | 2018-02-09 | Saccharomyces cerevisiae | ILLUMINA | 2018-02-27  | SRP132584 | 
 
-![IGV 1](images/igv1.png)
+<img src="images/igv1.png" width="700" height="200">
 
-![IGV 3](images/igv3.png)
+<img src="images/igv3.png" width="700" height="200">
 
 # Authors
 + Syed Hussain Ather (shussainather@gmail.com) (http://hussainather.com)
