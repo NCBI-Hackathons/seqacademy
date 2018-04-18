@@ -17,7 +17,7 @@ ddsHTSeq <- ddsHTSeq [rowSums(counts(ddsHTSeq))>1,]
 ddsHTSeq$condition <- relevel(ddsHTSeq$condition, ref = "Euploid")
 ddsHTSeq <- DESeq(ddsHTSeq)
 res <- results(ddsHTSeq)
-write.csv (as.data.frame(res),file="TreatmentVsMock_deseq2_results.csv")
+write.csv (as.data.frame(res),file="AneuploidVsEuploid_deseq2_results.csv")
 vsd <- varianceStabilizingTransformation(ddsHTSeq, blind=FALSE)
-write.csv(assay(vsd),file="TreatmentVsMock_VSD.csv")
+write.csv(assay(vsd),file="AneuploidVsEuploid_VSD.csv")
 
