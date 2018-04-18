@@ -17,7 +17,7 @@ SeqAcademy addresses these problems by providing an easy to use tutorial that ou
 ## Who is SeqAcademy for?
 With this tool, we hope that students, researchers, and even those with limited bioinformatics experience will feel comfortable analyzing their own epigenomic and RNA-Seq data.
 
-## How do I use this tutorial?
+## How do I use SeqAcademy?
 
 1. Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online. 
 
