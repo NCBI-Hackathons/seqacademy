@@ -1,0 +1,116 @@
+<h1 id="seqacademy">SeqAcademy</h1>
+
+<h3 id="aneasytouseallinonejupyternotebooktutorialforthernaseqandchipseqpipeline">An easy-to-use, all-in-one jupyter notebook tutorial for the RNAseq and ChIPseq pipeline</h3>
+
+<p><img src="images/seqacademy.png" alt="Logo" /></p>
+
+<p>I'm in! Get me started! Download our <a href="https://github.com/NCBI-Hackathons/seqacademy/blob/master/tutorial.ipynb">jupyter notebook</a>
+<br />
+<b>Keywords</b>:
+<i>RNA-Seq, ChIP-Seq, alignment, assembly, education, tutorial, pipeline</i></p>
+
+<h2 id="whatisseqacademy">What is SeqAcademy?</h2>
+
+<p>SeqAcademy is a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis.
+<br />
+RNA-Seq and ChIP-Seq experiments generate large amounts of data and rely on pipelines for efficient analysis.  However, existing tools perform specific portions of the pipeline or offer a complete pipeline solution for the advanced programmer.
+<br />
+SeqAcademy addresses these problems by providing an easy to use tutorial that outlines the complete RNA-Seq and ChIP-Seq analysis workflow and requires no prior programming experience.  </p>
+
+<h2 id="whoisseqacademyfor">Who is SeqAcademy for?</h2>
+
+<p>With this tool, we hope that students, researchers, and even those with limited bioinformatics experience will feel comfortable analyzing their own epigenomic and RNA-Seq data.</p>
+
+<h2 id="howdoiuseseqacademy">How do I use SeqAcademy?</h2>
+
+<ol>
+<li><p>Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online. </p></li>
+
+<li><p>Type <code>pwd</code> and press enter. This command shows what your current working directory is. Typing commands and pressing enter will be the primary way of running commands in this tutorial. Type <code>ls</code> to display which directories and files are in this current directory.</p></li>
+
+<li><p>If you'd like to use the tutorial in this current working directory, skip to step 4. Otherwise, you may make a new directory or move to another one. To make a new directory, run <code>mkdir DIRECTORY</code> in which DIRECTORY is the name of the directory you'd like to make. To move to another directory, run <code>cd DIRECTORY</code> in which DIRECTORY is the name of the DIRETORY you'd like to move to. To move up a directory, run <code>cd ..</code>. </p></li>
+
+<li><p>Download anaconda (https://www.anaconda.com/download/) and jupyter notebook (http://jupyter.readthedocs.io/en/latest/install.html) </p></li>
+
+<li><p>Run <code>git clone https://github.com/NCBI-Hackathons/seqacademy.git</code></p></li>
+</ol>
+
+<p><img src="images/gitclone.png" alt="Git clone" /></p>
+
+<ol>
+<li><p>Run <code>cd seqacademy</code>.</p></li>
+
+<li><p>Run <code>jupyter notebook</code> to launch jupyter notebook from your internet browser.</p></li>
+</ol>
+
+<p>If you run into a warning about the connection's privacy, proceed anyway.</p>
+
+<p><img src="images/unsafe1.png" alt="Unsafe 1" /></p>
+
+<p><img src="images/unsafe2.png" alt="Unsafe 2" /></p>
+
+<ol>
+<li>Click <code>tutorial.ipynb</code> and follow the instructions of the tutorial. </li>
+</ol>
+
+<h1 id="whatarethestepsofthistutorial">What are the steps of this tutorial?</h1>
+
+<p><img src="images/workflow.png" alt="Workflow" /></p>
+
+<p>This tutorial works using HISAT2 aligner to align sample reads to a reference.</p>
+
+<p><img src="images/alignment.png" alt="Alignment" /></p>
+
+<p>Then it performs MultiQC to extract quality control information from the aligned reads.</p>
+
+<p><img src="images/qc.png" alt="QC report" /></p>
+
+<p>It uses quantification methods (such as salmon for RNA-Seq and peak-calling for ChIP-Seq) to quantify expression and determine protein-binding. </p>
+
+<p><img src="images/quantify.png" alt="Quantify" /></p>
+
+<p>The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq), and the results are visualized.</p>
+
+<p>The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i>. For RNA-Seq, yeast data between euploid and aneuoploid conditions will be compared. For ChIP-SEq, yeast data between 3AT-treated and untreated conditions will be compared.</p>
+
+<h2 id="rnaseq">RNA-Seq</h2>
+
+<p>The following data presents the RNA-Seq data used in this tutorial. </p>
+
+<p>|              |            |        |        |            |            |             |           |           |            |            |             |             |         |                    |                    |            |                     |               |                  |                |            |                          |          |             |           |             |        |
+|--------------|------------|--------|--------|------------|------------|-------------|-----------|-----------|------------|------------|-------------|-------------|---------|--------------------|--------------------|------------|---------------------|---------------|------------------|----------------|------------|--------------------------|----------|-------------|-----------|-------------|--------|
+| BioSample    | Experiment | MBases | MBytes | Run        | SRA<em>Sample | Sample</em>Name | karyotype | replicate | Assay<em>Type | AvgSpotLen | BioProject  | Center</em>Name | Consent | DATASTORE<em>filetype | DATASTORE</em>provider | InsertSize | Instrument          | LibraryLayout | LibrarySelection | LibrarySource  | LoadDate   | Organism                 | Platform | ReleaseDate | SRA<em>Study | source</em>name | strain |
+| SAMN06859211 | SRX2775581 | 1632   | 575    | SRR5494627 | SRS2158877 | GSM2595338  | Aneuploid | First     | RNA-Seq    | 51         | PRJNA385090 | GEO         | public  | sra                | ncbi               | 0          | Illumina HiSeq 2500 | SINGLE        | cDNA             | TRANSCRIPTOMIC | 2017-05-02 | Saccharomyces cerevisiae | ILLUMINA | 2017-09-12  | SRP106028 | Yeast cells | S288c  |
+| SAMN06859210 | SRX2775582 | 940    | 331    | SRR5494628 | SRS2158878 | GSM2595339  | Aneuploid | Second    | RNA-Seq    | 51         | PRJNA385090 | GEO         | public  | sra                | ncbi               | 0          | Illumina HiSeq 2500 | SINGLE        | cDNA             | TRANSCRIPTOMIC | 2017-05-02 | Saccharomyces cerevisiae | ILLUMINA | 2017-09-12  | SRP106028 | Yeast cells | S288c  |
+| SAMN06859209 | SRX2775583 | 1195   | 421    | SRR5494629 | SRS2158879 | GSM2595340  | Aneuploid | Third     | RNA-Seq    | 51         | PRJNA385090 | GEO         | public  | sra                | ncbi               | 0          | Illumina HiSeq 2500 | SINGLE        | cDNA             | TRANSCRIPTOMIC | 2017-05-02 | Saccharomyces cerevisiae | ILLUMINA | 2017-09-12  | SRP106028 | Yeast cells | S288c  |
+| SAMN06859208 | SRX2775584 | 815    | 288    | SRR5494630 | SRS2158880 | GSM2595341  | Euploid   | First     | RNA-Seq    | 51         | PRJNA385090 | GEO         | public  | sra                | ncbi               | 0          | Illumina HiSeq 2500 | SINGLE        | cDNA             | TRANSCRIPTOMIC | 2017-05-02 | Saccharomyces cerevisiae | ILLUMINA | 2017-09-12  | SRP106028 | Yeast cells | S288c  |
+| SAMN06859207 | SRX2775585 | 946    | 333    | SRR5494631 | SRS2158881 | GSM2595342  | Euploid   | Second    | RNA-Seq    | 51         | PRJNA385090 | GEO         | public  | sra                | ncbi               | 0          | Illumina HiSeq 2500 | SINGLE        | cDNA             | TRANSCRIPTOMIC | 2017-05-02 | Saccharomyces cerevisiae | ILLUMINA | 2017-09-12  | SRP106028 | Yeast cells | S288c  |
+| SAMN06859206 | SRX2775586 | 1152   | 407    | SRR5494632 | SRS2158882 | GSM2595343  | Euploid   | Third     | RNA-Seq    | 51         | PRJNA385090 | GEO         | public  | sra                | ncbi               | 0          | Illumina HiSeq 2500 | SINGLE        | cDNA             | TRANSCRIPTOMIC | 2017-05-02 | Saccharomyces cerevisiae | ILLUMINA | 2017-09-12  | SRP106028 | Yeast cells | S288c  | </p>
+
+<h1 id="chipseq">ChIP-Seq</h1>
+
+<p>The following data presents the ChIP-Seq data used in this tutorial. </p>
+
+<p>|            |              |            |        |        |            |            |             |                                               |                        |        |            |             |             |         |                    |                    |            |             |               |                  |                |            |                          |          |             |           |
+|------------|--------------|------------|--------|--------|------------|------------|-------------|-----------------------------------------------|------------------------|--------|------------|-------------|-------------|---------|--------------------|--------------------|------------|-------------|---------------|------------------|----------------|------------|--------------------------|----------|-------------|-----------|
+| AvgSpotLen | BioSample    | Experiment | MBases | MBytes | Run        | SRA<em>Sample | Sample</em>Name | genotype                                      | source<em>name            | strain | Assay</em>Type | BioProject  | Center<em>Name | Consent | DATASTORE</em>filetype | DATASTORE<em>provider | InsertSize | Instrument  | LibraryLayout | LibrarySelection | LibrarySource  | LoadDate   | Organism                 | Platform | ReleaseDate | SRA</em>Study |
+| 148        | SAMN08513506 | SRX3677830 | 8816   | 3690   | SRR6703656 | SRS2938492 | GSM2991004  | MATa ade2-1 can1-100 leu2-3,112 trp1-1 ura3-1 | Untreated              | YDC111 | RNA-Seq    | PRJNA433659 | GEO         | public  | sra                | ncbi               | 0          | NextSeq 500 | PAIRED        | cDNA             | TRANSCRIPTOMIC | 2018-02-09 | Saccharomyces cerevisiae | ILLUMINA | 2018-02-27  | SRP132584 |
+| 148        | SAMN08513513 | SRX3677835 | 9614   | 4022   | SRR6703661 | SRS2938497 | GSM2991009  | MATa ade2-1 can1-100 leu2-3,112 trp1-1 ura3-1 | 3AT-treated for 40 min | YDC111 | RNA-Seq    | PRJNA433659 | GEO         | public  | sra                | ncbi               | 0          | NextSeq 500 | PAIRED        | cDNA             | TRANSCRIPTOMIC | 2018-02-09 | Saccharomyces cerevisiae | ILLUMINA | 2018-02-27  | SRP132584 |
+| 150        | SAMN08513512 | SRX3677836 | 6049   | 2749   | SRR6703662 | SRS2938498 | GSM2991010  | MATa ade2-1 can1-100 leu2-3,112 trp1-1 ura3-1 | Untreated              | YDC111 | RNA-Seq    | PRJNA433659 | GEO         | public  | sra                | ncbi               | 0          | NextSeq 500 | PAIRED        | cDNA             | TRANSCRIPTOMIC | 2018-02-09 | Saccharomyces cerevisiae | ILLUMINA | 2018-02-27  | SRP132584 |
+| 150        | SAMN08513511 | SRX3677837 | 6918   | 3140   | SRR6703663 | SRS2938499 | GSM2991011  | MATa ade2-1 can1-100 leu2-3,112 trp1-1 ura3-1 | 3AT-treated for 40 min | YDC111 | RNA-Seq    | PRJNA433659 | GEO         | public  | sra                | ncbi               | 0          | NextSeq 500 | PAIRED        | cDNA             | TRANSCRIPTOMIC | 2018-02-09 | Saccharomyces cerevisiae | ILLUMINA | 2018-02-27  | SRP132584 | </p>
+
+<h1 id="authors">Authors</h1>
+
+<ul>
+<li>Syed Hussain Ather (shussainather@gmail.com) (http://hussainather.com)</li>
+
+<li>Olaitan Awe (laitanawe@gmail.com)</li>
+
+<li>TJ Butler (tjbutler003@gmail.com)</li>
+
+<li>Tamiru Denka (tamiru.dank@nih.gov)</li>
+
+<li>Stephen Semick (stephen.semick@libd.org)</li>
+
+<li>Wanhu Tang (tangw2@niaid.nih.gov)</li>
+</ul>
