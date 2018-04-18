@@ -48,9 +48,9 @@ SeqAcademy is for students and researchers with little to no bioinformatics expe
 
 If you run into a warning about the connection's privacy, proceed anyway.
 
-<img src="images/unsafe1.png", alt="Unsafe 1" style="width: 80px; height: 80px"/>
+<img src="images/unsafe1.png" width="80" height="80"/>
 
-<img src="images/unsafe2.png", alt="Unsafe 2" style="width: 80px; height: 80px"/>
+<img src="images/unsafe2.png" width="80" height="80">
 
 8. Click `tutorial.ipynb` and follow the instructions of the tutorial. 
 
