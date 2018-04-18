@@ -2,21 +2,22 @@
 ### An easy-to-use, all-in-one jupyter notebook tutorial for the RNAseq and ChIPseq pipeline
 ![Logo](images/seqacademy.png)
 
-# What is SeqAcademy?
+I'm in! Get me started! Download our <a href="https://github.com/NCBI-Hackathons/seqacademy/blob/master/tutorial.ipynb">jupyter notebook</a>
+<br />
+<b>Keywords</b>:
+<i>RNA-Seq, ChIP-Seq, alignment, assembly, education, tutorial, pipeline</i>
+
+## What is SeqAcademy?
 SeqAcademy is a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis.
 <br />
 RNA-Seq and ChIP-Seq experiments generate large amounts of data and rely on pipelines for efficient analysis.  However, existing tools perform specific portions of the pipeline or offer a complete pipeline solution for the advanced programmer.
 <br />
 SeqAcademy addresses these problems by providing an easy to use tutorial that outlines the complete RNA-Seq and ChIP-Seq analysis workflow and requires no prior programming experience.  
 
-# Who is SeqAcademy for?
-
+## Who is SeqAcademy for?
 With this tool, we hope that students, researchers, and even those with limited bioinformatics experience will feel comfortable analyzing their own epigenomic and RNA-Seq data.
 
-<b>Keywords</b>:
-<i>RNA-Seq, ChIP-Seq, alignment, assembly, education, tutorial, pipeline</i>
-
-# How do I use this tutorial?
+## How do I use this tutorial?
 
 1. Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online. 
 
