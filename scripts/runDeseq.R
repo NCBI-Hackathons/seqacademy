@@ -4,7 +4,7 @@
 
 library("DESeq2")
 
-directory <- "/home/ubuntu/hussainather/omicsedu/test/"
+directory <- "../test/"
 # filelist <- list.files(directory)
 # sampleFiles <- grep("genecount",filelist,value=TRUE)
 sampleFiles <-c("SRR5494627.genecount.txt","SRR5494628.genecount.txt","SRR5494629.genecount.txt","SRR5494630.genecount.txt","SRR5494631.genecount.txt","SRR5494632.genecount.txt")
