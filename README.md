@@ -29,7 +29,13 @@ With this tool, we hope that researchers of all categories of experience level w
 
 6. Run `cd seqacademy`.
 
-7. Run `jupyter notebook` to launch jupyter notebook.
+7. Run `jupyter notebook` to launch jupyter notebook from your internet browser.
+
+If you run into a warning about the connection's privacy, proceed anyway.
+
+![Unsafe 1](images/unsafe1.png)
+
+![Unsafe 2](images/unsafe2.png)
 
 8. Click `tutorial.ipynb` and follow the instructions of the tutorial. 
 
