@@ -40,7 +40,7 @@ SeqAcademy is for students and researchers with little to no bioinformatics expe
 
 5. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git`
 
-![Git clone](images/gitclone.png)
+<img src="images/gitclone.png" width="700">
 
 6. Run `cd seqacademy`.
 
@@ -48,7 +48,7 @@ SeqAcademy is for students and researchers with little to no bioinformatics expe
 
 If you run into a warning about the connection's privacy, proceed anyway.
 
-<img src="images/unsafe1.png" width="700" height="500"/>
+<img src="images/unsafe1.png" width="700" height="500">
 
 <img src="images/unsafe2.png" width="700" height="500">
 
