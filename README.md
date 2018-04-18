@@ -95,7 +95,7 @@ The following data presents the RNA-Seq data used in this tutorial.
 
 ![PCA 2](images/pca2.png)
 
-![Volcano plot](images/volcano_plot.png)
+![Volcano plot](images/volcanoplot.png)
 
 ![Bar plot](images/barplot_sig.png)
 
