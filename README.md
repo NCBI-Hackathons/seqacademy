@@ -2,6 +2,18 @@
 
 ![Logo](images/logo.png)
 
+# Abstract
+Quantification of gene expression and characterization of gene transcript structures are central problems in molecular biology. RNA Sequencing (RNA-Seq) and Chromatin Immuno-Precipitation Sequencing (ChIP-seq) experiments generate large amounts of data that necessitate pipelines to analyze these data in an efficient manner and therefore gain insight.
+<br />
+Existing tools target specific tasks in the analysis pipeline such as quality control or mapping, while others offer an all-in-one solution but these tools are more geared towards the advanced users.
+<br />
+In this project, we present OmicsEdu, a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis and our goal was to build a tool which is easy to use even with no programming experience.
+<br />
+With this tool, we hope that researchers of all categories of experience level will be able to easily analyse their epigenomic and RNA-Seq data.
+
+<b>Keywords</b>:
+<i>RNA-Seq, ChIP-Seq, education, alignment, assembly</i>
+
 # What is OmicsEdu?
 
 OmicsEdu is an educational pipeline for RNA-Seq and ChIP-Seq analysis intended for scientists and science enthusiasts. No prior background in programming or biology is required. 
@@ -30,45 +42,15 @@ This is where we will put sample RNA-Seq input and output.
 
 This is where we will put sample ChIP-Seq input and output. 
 
-# To-do
-
-+ Add Docker-level containerization
-
-+ Add images and explanations
-
-+ Create visualizations of output 
-
-# Abstract
-Quantification of gene expression and characterization of gene transcript structures are central problems in molecular biology. RNA Sequencing (RNA-Seq) and Chromatin Immuno-Precipitation Sequencing (ChIP-seq) experiments generate large amounts of data that necessitate pipelines to analyze these data in an efficient manner and therefore gain insight.
-<br />
-Existing tools target specific tasks in the analysis pipeline such as quality control or mapping, while others offer an all-in-one solution but these tools are more geared towards the advanced users.
-<br />
-In this project, we present OmicsEdu, a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis and our goal was to build a tool which is easy to use even with no programming experience.
-<br />
-With this tool, we hope that researchers of all categories of experience level will be able to easily analyse their epigenomic and RNA-Seq data.
-
-<b>Keywords</b>:
-<i>RNA-Seq, ChIP-Seq, education, alignment, assembly</i>
-
-## Requirements
-
-### Terminal emulator
-
-Mac and Linux systems come with Terminal installed, and Windows systems come with Console.  
-
-### Jupyter notebook
-
-Installation instructions: http://jupyter.readthedocs.io/en/latest/install.html
-
 # How do I use this tutorial?
 
-1. Identify the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online. 
+1. Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online. 
 
-2. Open a command line program (such as Terminal).
+2. Type `pwd` and press enter. This command shows what your current working directory is. Typing commands and pressing enter will be the primary way of running commands in this tutorial. Type `ls` to display which directories and files are in this current directory.
 
-3. Type `pwd` and press enter. This command shows what your current working directory is. Typing commands and pressing enter will be the primary way of running commands in this tutorial. Type `ls` to display which directories and files are in this current directory.
+3. If you'd like to use the tutorial in this current working directory, skip to step 5. Otherwise, you may make a new directory or move to another one. To make a new directory, run `mkdir DIRECTORY` in which DIRECTORY is the name of the directory you'd like to make. To move to another directory, run `cd DIRECTORY` in which DIRECTORY is the name of the DIRETORY you'd like to move to. To move up a directory, run `cd ..`. 
 
-4. If you'd like to use the tutorial in this current working directory, skip to step 5. Otherwise, you may make a new directory or move to another one. To make a new directory, run `mkdir DIRECTORY` in which DIRECTORY is the name of the directory you'd like to make. To move to another directory, run `cd DIRECTORY` in which DIRECTORY is the name of the DIRETORY you'd like to move to. To move up a directory, run `cd ..`. 
+4. Download anaconda (https://www.anaconda.com/download/) and jupyter notebook (http://jupyter.readthedocs.io/en/latest/install.html) 
 
 5. Run `git clone https://github.com/NCBI-Hackathons/omicsedu.git`
 
