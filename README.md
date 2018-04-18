@@ -1,14 +1,14 @@
-# OmicsEdu
+# SeqAcademy
 
 ![Logo](images/logo.png)
 
-# What is OmicsEdu?
+# What is SeqAcademy?
 Quantification of gene expression and characterization of gene transcript structures are central problems in molecular biology. RNA Sequencing (RNA-Seq) and Chromatin Immuno-Precipitation Sequencing (ChIP-seq) experiments generate large amounts of data that necessitate pipelines to analyze these data in an efficient manner and therefore gain insight.
 <br />
 Existing tools target specific tasks in the analysis pipeline such as quality control or mapping, while others offer an all-in-one solution but these tools are more geared towards the advanced users.
 <br />
 <br />
-In this project, we present OmicsEdu, a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis and our goal was to build a tool which is easy to use even with no programming experience.
+In this project, we present SeqAcademy, a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis and our goal was to build a tool which is easy to use even with no programming experience.
 <br />
 With this tool, we hope that researchers of all categories of experience level will be able to easily analyse their epigenomic and RNA-Seq data.
 
@@ -25,9 +25,9 @@ With this tool, we hope that researchers of all categories of experience level w
 
 4. Download anaconda (https://www.anaconda.com/download/) and jupyter notebook (http://jupyter.readthedocs.io/en/latest/install.html) 
 
-5. Run `git clone https://github.com/NCBI-Hackathons/omicsedu.git`
+5. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git`
 
-6. Run `cd omicsedu`.
+6. Run `cd seqacademy`.
 
 7. Run `jupyter notebook` to launch jupyter notebook.
 
