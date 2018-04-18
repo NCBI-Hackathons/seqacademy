@@ -45,7 +45,7 @@ If you run into a warning about the connection's privacy, proceed anyway.
 
 # What are the steps of this tutorial?
 
-![Workflow](images/workflow.png)
+![Pipeline](images/pipeline.png)
 
 This tutorial works using HISAT2 aligner to align sample reads to a reference.
 
