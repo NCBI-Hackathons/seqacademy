@@ -1,6 +1,6 @@
 # SeqAcademy
 
-![Logo](images/logo.png)
+![Logo](images/seqacademy.png)
 
 # What is SeqAcademy?
 Quantification of gene expression and characterization of gene transcript structures are central problems in molecular biology. RNA Sequencing (RNA-Seq) and Chromatin Immuno-Precipitation Sequencing (ChIP-seq) experiments generate large amounts of data that necessitate pipelines to analyze these data in an efficient manner and therefore gain insight.
