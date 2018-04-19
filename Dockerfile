@@ -27,6 +27,16 @@ RUN apt-get update && apt-get install --yes \
  libxml2-dev
 
 WORKDIR /opt
+RUN git clone https://github.com/samtools/htslib.git
+WORKDIR /opt/htslib
+RUN autoheader
+RUN autoconf
+RUN ./configure
+RUN make
+RUN make install
+ENV PATH "$PATH:/opt/htslib/"
+
+WORKDIR /opt
 RUN git clone https://github.com/samtools/samtools.git
 WORKDIR /opt/samtools
 RUN autoheader
