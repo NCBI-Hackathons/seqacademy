@@ -1,4 +1,4 @@
-### forked from NCBI-Hackathons/OmicsEdu
+### forked from NCBI-Hackathons/seqacademy
 
 FROM ubuntu:latest
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
@@ -29,16 +29,6 @@ RUN apt-get update && apt-get install --yes \
  libxml2-dev
 
 WORKDIR /opt
-RUN git clone https://github.com/samtools/htslib.git
-WORKDIR /opt/htslib
-RUN autoheader
-RUN autoconf
-RUN ./configure
-RUN make
-RUN make install
-ENV PATH "$PATH:/opt/htslib/"
-
-WORKDIR /opt
 RUN git clone https://github.com/samtools/samtools.git
 WORKDIR /opt/samtools
 RUN autoheader
@@ -49,16 +39,10 @@ RUN make install
 ENV PATH "$PATH:/opt/samtools/"
 
 WORKDIR /opt/
-RUN wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.7.1+-x64-linux.tar.gz
-RUN tar xvzf ncbi-blast-2.7.1+-x64-linux.tar.gz
-WORKDIR /opt/ncbi-blast-2.7.1+
-ENV PATH "$PATH:/opt/ncbi-blast-2.7.1+/"
-
-WORKDIR /opt/
 RUN wget ftp://ftp.ccb.jhu.edu/pub/infphilo/hisat2/downloads/hisat2-2.1.0-Linux_x86_64.zip
 RUN unzip hisat2-2.1.0-Linux_x86_64.zip
 WORKDIR /opt/hisat2-2.1.0
 ENV PATH "$PATH:/opt/hisat2-2.1.0/"
 
 WORKDIR /
-RUN git clone https://github.com/NCBI-Hackathons/omicsedu.git
+RUN git clone https://github.com/NCBI-Hackathons/seqacademy.git
