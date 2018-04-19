@@ -1,63 +1,61 @@
 <h1 id="seqacademy">SeqAcademy</h1>
-<h3 id="an-easy-to-use-all-in-one-jupyter-notebook-tutorial-for-the-rnaseq-and-chipseq-pipeline">An easy-to-use, all-in-one jupyter notebook tutorial for the RNAseq and ChIPseq pipeline</h3>
+<h3 id="an-easy-to-use-all-in-one-jupyter-notebook-tutorial-for-the-rna-seq-and-chip-seq-pipeline">An easy-to-use, all-in-one jupyter notebook tutorial for the RNA-Seq and ChIP-Seq pipeline</h3>
 <div class="figure">
 <img src="images/seqacademy.png" alt="Logo" /><p class="caption">Logo</p>
 </div>
-<h3 id="system-requirements">System requirements:</h3>
-<h4 id="ready-to-get-going">Ready to get going?</h4>
-<p><a href="#how-do-i-use-seqacademy">Jump to &quot;How do I use SeqAcademy?&quot; and get started!</a></p>
+<h5 id="we-recommend-at-least-4-processors-with-at-least-16-gb-ram-each">We recommend at least 4 processors with at least 16 GB RAM each</h5>
+<h5 id="total-disk-space-required-includes-large-sam-files-350-gb">Total disk space required (includes large SAM files): 350 GB</h5>
+<p><a href="#how-do-i-use-seqacademy">Ready to get going? Jump to &quot;How do I use SeqAcademy?&quot; and get started!</a></p>
 <p><b>Keywords</b>: <i>RNA-Seq, ChIP-Seq, alignment, assembly, education, tutorial, pipeline</i></p>
 <h2 id="what-is-seqacademy">What is SeqAcademy?</h2>
 <p>SeqAcademy is a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis.</p>
 <p><br /> RNA-Seq and ChIP-Seq experiments generate large amounts of data and rely on pipelines for efficient analysis. However, existing tools perform specific portions of the pipeline or offer a complete pipeline solution for the advanced programmer.</p>
 <p><br /> SeqAcademy addresses these problems by providing an easy to use tutorial that outlines the complete RNA-Seq and ChIP-Seq analysis workflow and requires no prior programming experience.</p>
+<p><br /><br /> <b>Demo: </b><a href="http://asbcb.org/seqacademy.html">SeqAcademy</a> <br /><br /></p>
 <h2 id="who-is-seqacademy-for">Who is SeqAcademy for?</h2>
 <p>SeqAcademy is for students and researchers with little to no bioinformatics experience interested in hands-on bioinformatics tutorials. Anyone will feel comfortable analyzing epigenomic and RNA-Seq data using this simple educational tool.</p>
+<h2 id="what-are-the-steps-of-this-tutorial">What are the steps of this tutorial?</h2>
+<p><img src="images/pipeline.png" width="700" height="500"></p>
+<p>This tutorial works using HISAT2 aligner to align sample reads to a reference.</p>
+<p><img src="images/alignment.png" width="700" height="300"></p>
+<p>Then it performs MultiQC to extract quality control information from the aligned reads.</p>
+<p><img src="images/qc.png" width="700" height="300"></p>
+<p>It uses quantification methods (such as salmon for RNA-Seq and peak-calling for ChIP-Seq) to quantify expression and determine protein-binding.</p>
+<p><img src="images/quantify.png" width="700" height="500"></p>
+<p>The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq), and the results are visualized.</p>
+<p>The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i>. For RNA-Seq, yeast data between euploid and aneuoploid conditions will be compared. For ChIP-SEq, yeast data between 3AT-treated and untreated conditions will be compared.</p>
 <h2 id="how-do-i-use-seqacademy">How do I use SeqAcademy?</h2>
 <ol style="list-style-type: decimal">
-<li><p>Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online.</p></li>
-<li><p>Type <code>pwd</code> and press enter. This command shows what your current working directory is. Typing commands and pressing enter will be the primary way of running commands in this tutorial. Type <code>ls</code> to display which directories and files are in this current directory.</p></li>
-<li><p>If you'd like to use the tutorial in this current working directory, skip to step 4. Otherwise, you may make a new directory or move to another one. To make a new directory, run <code>mkdir DIRECTORY</code> in which DIRECTORY is the name of the directory you'd like to make. To move to another directory, run <code>cd DIRECTORY</code> in which DIRECTORY is the name of the DIRETORY you'd like to move to. To move up a directory, run <code>cd ..</code>.</p></li>
-<li><p>Download anaconda (https://www.anaconda.com/download/) and jupyter notebook (http://jupyter.readthedocs.io/en/latest/install.html)</p></li>
-<li><p>Run <code>git clone https://github.com/NCBI-Hackathons/seqacademy.git</code></p></li>
+<li>Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online.</li>
 </ol>
-<div class="figure">
-<img src="images/gitclone.png" alt="Git clone" /><p class="caption">Git clone</p>
-</div>
+<p><img src="images/terminal.png" width="700" height="500"></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Type <code>pwd</code> and press enter. This command shows what your current working directory is. Typing commands and pressing enter will be the primary way of running commands in this tutorial. Type <code>ls</code> to display which directories and files are in this current directory.</li>
+</ol>
+<p><img src="images/pwdls.png" width="700" height="500"></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>If you'd like to use the tutorial in this current working directory, skip to step 5. Otherwise, you may make a new directory or move to another one. To make a new directory, run <code>mkdir DIRECTORY</code> in which DIRECTORY is the name of the directory you'd like to make. To move to another directory, run <code>cd DIRECTORY</code> in which DIRECTORY is the name of the DIRETORY you'd like to move to. To move up a directory, run <code>cd ..</code>.</p></li>
+<li><p>Download anaconda (https://www.anaconda.com/download/) and git (https://git-scm.com/downloads).</p></li>
+</ol>
+<p><img src="images/anaconda.png" width="700" height="400"></p>
+<p><img src="images/git.png" width="700" height="300"></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Run <code>git clone https://github.com/NCBI-Hackathons/seqacademy.git</code></li>
+</ol>
+<p><img src="images/gitclone.png" width="700"></p>
 <ol start="6" style="list-style-type: decimal">
 <li><p>Run <code>cd seqacademy</code>.</p></li>
 <li><p>Run <code>jupyter notebook</code> to launch jupyter notebook from your internet browser.</p></li>
 </ol>
 <p>If you run into a warning about the connection's privacy, proceed anyway.</p>
-<div class="figure">
-<img src="images/unsafe1.png" alt="Unsafe 1" /><p class="caption">Unsafe 1</p>
-</div>
-<div class="figure">
-<img src="images/unsafe2.png" alt="Unsafe 2" /><p class="caption">Unsafe 2</p>
-</div>
+<p><img src="images/unsafe1.png" width="750" height="500"></p>
+<p><img src="images/unsafe2.png" width="600" height="500"></p>
 <ol start="8" style="list-style-type: decimal">
 <li>Click <code>tutorial.ipynb</code> and follow the instructions of the tutorial.</li>
 </ol>
-<h1 id="what-are-the-steps-of-this-tutorial">What are the steps of this tutorial?</h1>
-<div class="figure">
-<img src="images/pipeline.png" alt="Pipeline" /><p class="caption">Pipeline</p>
-</div>
-<p>This tutorial works using HISAT2 aligner to align sample reads to a reference.</p>
-<div class="figure">
-<img src="images/alignment.png" alt="Alignment" /><p class="caption">Alignment</p>
-</div>
-<p>Then it performs MultiQC to extract quality control information from the aligned reads.</p>
-<div class="figure">
-<img src="images/qc.png" alt="QC report" /><p class="caption">QC report</p>
-</div>
-<p>It uses quantification methods (such as salmon for RNA-Seq and peak-calling for ChIP-Seq) to quantify expression and determine protein-binding.</p>
-<div class="figure">
-<img src="images/quantify.png" alt="Quantify" /><p class="caption">Quantify</p>
-</div>
-<p>The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq), and the results are visualized.</p>
-<p>The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i>. For RNA-Seq, yeast data between euploid and aneuoploid conditions will be compared. For ChIP-SEq, yeast data between 3AT-treated and untreated conditions will be compared.</p>
+<p><img src="images/jupyter.png" width="400" height="500"></p>
 <h2 id="rna-seq">RNA-Seq</h2>
-<p>The following data presents the RNA-Seq data used in this tutorial.</p>
+<p>The following data presents the RNA-Seq data used in this tutorial. This tutorial observes RNA-Seq data of aneuploidy in Yeast (source: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP106028).</p>
 <table>
 <tbody>
 <tr class="odd">
@@ -272,17 +270,15 @@
 </tr>
 </tbody>
 </table>
-<div class="figure">
-<img src="images/pca1.png" alt="PCA 1" /><p class="caption">PCA 1</p>
-</div>
-<div class="figure">
-<img src="images/pca2.png" alt="PCA 2" /><p class="caption">PCA 2</p>
-</div>
-<div class="figure">
-<img src="images/volcanoplot.png" alt="Volcano plot" /><p class="caption">Volcano plot</p>
-</div>
+<p><img src="images/pca1.png" width="600" height="500"></p>
+<p><img src="images/pca2.png" width="600" height="500"></p>
+<p>Principal component analysis (PCA) suggests gene expression for euploid yeast samples (haploid) clusters distinctly from that of the aneuploid yeast samples (diploid chromosome X).The first two PCs account for ~70% of the variance in expressed genes). Data provided by Mulla et al. (https://elifesciences.org/articles/27991).</p>
+<p><img src="images/volcanoplot.png" width="600" height="500"></p>
+<p>A volcano plot of differentially expressed genes between euploid yeast colonies versus aneuploid yeast colonies. The x-axis represents the difference in gene expression between the conditions. False discovery rate (FDR), a method for controlling for multiple testing, is along the y-axis. Each point represents a tested gene (N=3,926). Red points are those reaching genome-wide significance (at FDR&lt;0.05, N=663), whereas grey points are genes not reaching statistical significance (FDR&gt;0.05, N=3,263). Data provided by Mulla et al. (https://elifesciences.org/articles/27991).</p>
+<p><img src="images/barplot_sig.png" width="600" height="500"></p>
+<p>The relative enrichment of chrX for differentially expressed genes suggests the downstream results of this processing pipeline are consistent with biological expectations. The RNA-seq experiment was performed on yeast colonies with an extra chromosome X. Data provided by Mulla et al. (https://elifesciences.org/articles/27991).</p>
 <h1 id="chip-seq">ChIP-Seq</h1>
-<p>The following data presents the ChIP-Seq data used in this tutorial.</p>
+<p>The following data presents the ChIP-Seq data used in this tutorial. This tutorial observes ChIP-Seq data of induction by 3-AT in Yeast (source: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP132584).</p>
 <table>
 <tbody>
 <tr class="odd">
@@ -432,6 +428,8 @@
 </tr>
 </tbody>
 </table>
+<p><img src="images/igv1.png" width="1000" height="200"></p>
+<p>Distribution of intersected peaks across the yeast genome. This IGV screenshot shows in the bottom row the intersected peaks between the two treatment conditions of the yeast samples. The matching genes with each intersected peak can be analyzed.</p>
 <h1 id="authors">Authors</h1>
 <ul>
 <li>Syed Hussain Ather (shussainather@gmail.com) (http://hussainather.com)</li>
