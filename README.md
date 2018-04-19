@@ -54,25 +54,33 @@ The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i
 
 <img src="images/terminal.png" width="700" height="500">
 
-2. Type `pwd` and press enter. This command shows what your current working directory is. Typing commands and pressing enter will be the primary way of running commands in this tutorial. Type `ls` to display which directories and files are in this current directory.
+2. Type `pwd` and press enter. This command shows what your current working directory is. Typing commands and pressing enter will be the primary way of running commands in this tutorial. Type `ls` to display which directories and files are in this current directory. 
 
 <img src="images/pwdls.png" width="700" height="500">
 
 3. If you'd like to use the tutorial in this current working directory, skip to step 5. Otherwise, you may make a new directory or move to another one. To make a new directory, run `mkdir DIRECTORY` in which DIRECTORY is the name of the directory you'd like to make. To move to another directory, run `cd DIRECTORY` in which DIRECTORY is the name of the DIRETORY you'd like to move to. To move up a directory, run `cd ..`. 
 
-4. Download anaconda (https://www.anaconda.com/download/) and git (https://git-scm.com/downloads).
+4. Given the disk space and RAM requirements, it's likely you'll want to use a virtual machine for this tutorial. To connect to a virtual machine, make sure you use your own domain name or IP address. 
+
+If you know the hostname you'd like to connect to, run `ssh -L PORTNUMBER:localhost:PORTNUMBER USERNAME@HOSTNAME` in which PORTNUMBER is a chosen unique identifable number, USERNAME is your username, and HOSTNAME is your hostname. 
+
+If you know the IP you'd like to connect to, run `ssh -L PORTNUMBER:localhost:PORTNUMBER USERNAME@IP` in which IP is the IP address of the machine you wish to connect to.
+
+5. Download anaconda (https://www.anaconda.com/download/) and git (https://git-scm.com/downloads).
 
 <img src="images/anaconda.png" width="700" height="400">
 
 <img src="images/git.png" width="700" height="300"> 
 
-5. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git`
+6. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git` to clone the directory such that you can download the tutorial. 
 
 <img src="images/gitclone.png" width="700">
 
-6. Run `cd seqacademy`.
+7. Run `cd seqacademy` to switch into the seqacademy directory.
 
-7. Run `jupyter notebook` to launch jupyter notebook from your internet browser.
+8. If you are not on a virtual machine, run `jupyter notebook` to launch jupyter notebook from your internet browser.
+
+If you are on a virtual machine, run `jupyter notebook --no-browser --port=PORTNUMBER` to launch jupyter notebook. Then copy+paste the URL into a web browser as instructed. 
 
 If you run into a warning about the connection's privacy, proceed anyway.
 
