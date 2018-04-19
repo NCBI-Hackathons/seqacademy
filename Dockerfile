@@ -40,11 +40,14 @@ RUN make
 RUN make install
 ENV PATH "$PATH:/opt/htslib/"
 
-WORKDIR /opt
-RUN wget https://repo.continuum.io/archive/Anaconda2-4.2.0-Linux-x86_64.sh
-RUN bash Anaconda2-4.2.0-Linux-x86_64.sh -b -p ~/anaconda
-RUN rm Anaconda2-4.2.0-Linux-x86_64.sh
-RUN echo 'export PATH="~/anaconda/bin:$PATH"' >> ~/.bashrc 
+RUN cd /tmp && \
+    mkdir -p $CONDA_DIR && \
+    curl -s https://repo.continuum.io/miniconda/Miniconda3-4.3.21-Linux-x86_64.sh -o miniconda.sh && \
+    /bin/bash miniconda.sh -f -b -p $CONDA_DIR && \
+    rm miniconda.sh && \
+    $CONDA_DIR/bin/conda config --system --add channels conda-forge && \
+    $CONDA_DIR/bin/conda config --system --set auto_update_conda false && \
+    conda clean -tipsy
 
 WORKDIR /opt
 RUN git clone https://github.com/samtools/samtools.git
