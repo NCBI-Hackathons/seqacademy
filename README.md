@@ -57,15 +57,15 @@ The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i
 
 2. Type `pwd` and press enter. This command shows what your current working directory is. Typing commands and pressing enter will be the primary way of running commands in this tutorial. Type `ls` to display which directories and files are in this current directory.
 
-<img src="images/pwdls.png">
+<img src="images/pwdls.png" width="700" height="500">
 
 3. If you'd like to use the tutorial in this current working directory, skip to step 5. Otherwise, you may make a new directory or move to another one. To make a new directory, run `mkdir DIRECTORY` in which DIRECTORY is the name of the directory you'd like to make. To move to another directory, run `cd DIRECTORY` in which DIRECTORY is the name of the DIRETORY you'd like to move to. To move up a directory, run `cd ..`. 
 
 4. Download anaconda (https://www.anaconda.com/download/) and git (https://git-scm.com/downloads).
 
-<img src="images/anaconda.png" width="700" height="500">
+<img src="images/anaconda.png" width="700" height="400">
 
-<img src="images/git.png" width="700" height="500"> 
+<img src="images/git.png" width="700" height="400"> 
 
 5. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git`
 
