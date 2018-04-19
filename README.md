@@ -53,7 +53,7 @@ The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i
 
 1. Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online. 
 
-<img src="images/terminal.png">
+<img src="images/terminal.png" width="700" height="500">
 
 2. Type `pwd` and press enter. This command shows what your current working directory is. Typing commands and pressing enter will be the primary way of running commands in this tutorial. Type `ls` to display which directories and files are in this current directory.
 
@@ -63,9 +63,9 @@ The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i
 
 4. Download anaconda (https://www.anaconda.com/download/) and git (https://git-scm.com/downloads).
 
-<img src="images/anaconda.png">
+<img src="images/anaconda.png" width="700" height="500">
 
-<img src="images/git.png"> 
+<img src="images/git.png" width="700" height="500"> 
 
 5. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git`
 
