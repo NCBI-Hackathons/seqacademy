@@ -28,37 +28,7 @@ SeqAcademy addresses these problems by providing an easy to use tutorial that ou
 
 SeqAcademy is for students and researchers with little to no bioinformatics experience interested in hands-on bioinformatics tutorials.  Anyone will feel comfortable analyzing epigenomic and RNA-Seq data using this simple educational tool.
 
-## How do I use SeqAcademy?
-
-1. Install Docker. Follow the instructions for your environment (https://www.docker.com/docker-mac).
-
-2. Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online. 
-
-3. Type `pwd` and press enter. This command shows what your current working directory is. Typing commands and pressing enter will be the primary way of running commands in this tutorial. Type `ls` to display which directories and files are in this current directory.
-
-4. If you'd like to use the tutorial in this current working directory, skip to step 5. Otherwise, you may make a new directory or move to another one. To make a new directory, run `mkdir DIRECTORY` in which DIRECTORY is the name of the directory you'd like to make. To move to another directory, run `cd DIRECTORY` in which DIRECTORY is the name of the DIRETORY you'd like to move to. To move up a directory, run `cd ..`. 
-
-5. Download anaconda (https://www.anaconda.com/download/) and jupyter notebook (http://jupyter.readthedocs.io/en/latest/install.html) 
-
-6. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git`
-
-<img src="images/gitclone.png" width="700">
-
-7. Run `cd seqacademy`.
-
-8. Run `docker pull hussainather/seqacademy` then `docker run -it hussainather/seqacademy`
-
-9. Run `jupyter notebook` to launch jupyter notebook from your internet browser.
-
-If you run into a warning about the connection's privacy, proceed anyway.
-
-<img src="images/unsafe1.png" width="750" height="500">
-
-<img src="images/unsafe2.png" width="600" height="500">
-
-10. Click `tutorial.ipynb` and follow the instructions of the tutorial.
-
-# What are the steps of this tutorial?
+## What are the steps of this tutorial?
 
 <img src="images/pipeline.png" width="700" height="500">
 
@@ -76,8 +46,33 @@ It uses quantification methods (such as salmon for RNA-Seq and peak-calling for 
 
 The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq), and the results are visualized.
 
-
 The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i>. For RNA-Seq, yeast data between euploid and aneuoploid conditions will be compared. For ChIP-SEq, yeast data between 3AT-treated and untreated conditions will be compared.
+
+## How do I use SeqAcademy?
+
+1. Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online. 
+
+2. Type `pwd` and press enter. This command shows what your current working directory is. Typing commands and pressing enter will be the primary way of running commands in this tutorial. Type `ls` to display which directories and files are in this current directory.
+
+3. If you'd like to use the tutorial in this current working directory, skip to step 5. Otherwise, you may make a new directory or move to another one. To make a new directory, run `mkdir DIRECTORY` in which DIRECTORY is the name of the directory you'd like to make. To move to another directory, run `cd DIRECTORY` in which DIRECTORY is the name of the DIRETORY you'd like to move to. To move up a directory, run `cd ..`. 
+
+4. Download anaconda (https://www.anaconda.com/download/) and jupyter notebook (http://jupyter.readthedocs.io/en/latest/install.html) 
+
+5. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git`
+
+<img src="images/gitclone.png" width="700">
+
+6. Run `cd seqacademy`.
+
+7. Run `jupyter notebook` to launch jupyter notebook from your internet browser.
+
+If you run into a warning about the connection's privacy, proceed anyway.
+
+<img src="images/unsafe1.png" width="750" height="500">
+
+<img src="images/unsafe2.png" width="600" height="500">
+
+8. Click `tutorial.ipynb` and follow the instructions of the tutorial.
 
 ## RNA-Seq
 
