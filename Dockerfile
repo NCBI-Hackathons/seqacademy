@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install --yes \
  zlib1g-dev \
  vim-common \
  wget \
+ jupyter notebook \
  libncurses5-dev \
  autotools-dev \
  autoconf \
