@@ -16,6 +16,9 @@ RUN apt-get update && apt-get install --yes \
  perl \
  r-base \
  python \
+ python-pip \
+ python-dev \
+ python2.7-dev \
  libbz2-dev \
  liblzma-dev \
  apt-utils \
