@@ -41,6 +41,12 @@ RUN make install
 ENV PATH "$PATH:/opt/htslib/"
 
 WORKDIR /opt
+RUN wget https://repo.continuum.io/archive/Anaconda2-4.2.0-Linux-x86_64.sh
+RUN bash Anaconda2-4.2.0-Linux-x86_64.sh -b -p ~/anaconda
+RUN rm Anaconda2-4.2.0-Linux-x86_64.sh
+RUN echo 'export PATH="~/anaconda/bin:$PATH"' >> ~/.bashrc 
+
+WORKDIR /opt
 RUN git clone https://github.com/samtools/samtools.git
 WORKDIR /opt/samtools
 RUN autoheader
