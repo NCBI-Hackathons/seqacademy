@@ -44,19 +44,19 @@ SeqAcademy is for students and researchers with little to no bioinformatics expe
 
 <img src="images/gitclone.png" width="700">
 
-7. Run `docker pull hussainather/seqacademy` then `docker run -it hussainather/seqacademy`.
+7. Run `cd seqacademy`.
 
-8. Run `cd seqacademy`.
+8. Run `docker pull hussainather/seqacademy` then `docker run -it hussainather/seqacademy`
 
 9. Run `jupyter notebook` to launch jupyter notebook from your internet browser.
 
 If you run into a warning about the connection's privacy, proceed anyway.
 
-<img src="images/unsafe1.png" width="700" height="500">
+<img src="images/unsafe1.png" width="750" height="500">
 
-<img src="images/unsafe2.png" width="700" height="500">
+<img src="images/unsafe2.png" width="600" height="500">
 
-8. Click `tutorial.ipynb` and follow the instructions of the tutorial. 
+10. Click `tutorial.ipynb` and follow the instructions of the tutorial.
 
 # What are the steps of this tutorial?
 
