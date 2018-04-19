@@ -82,7 +82,7 @@ If you run into a warning about the connection's privacy, proceed anyway.
 
 8. Click `tutorial.ipynb` and follow the instructions of the tutorial.
 
-<img src="images/jupyter.png" width="200" height="500">
+<img src="images/jupyter.png" width="400" height="500">
 
 ## RNA-Seq
 
