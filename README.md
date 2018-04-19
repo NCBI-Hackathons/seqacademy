@@ -8,21 +8,15 @@
 [Ready to get going? Jump to "How do I use SeqAcademy?" and get started!](#how-do-i-use-seqacademy)
 
 <b>Keywords</b>:
-<i>RNA-Seq, ChIP-Seq, alignment, assembly, education, tutorial, pipeline</i>
+<i>RNA-Seq, ChIP-Seq, alignment, differential gene expression, peak-calling, education, tutorial, pipeline</i>
 
 ## What is SeqAcademy?
 
 SeqAcademy is a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis.
 
-<br />
 RNA-Seq and ChIP-Seq experiments generate large amounts of data and rely on pipelines for efficient analysis.  However, existing tools perform specific portions of the pipeline or offer a complete pipeline solution for the advanced programmer.
 
-<br />
 SeqAcademy addresses these problems by providing an easy to use tutorial that outlines the complete RNA-Seq and ChIP-Seq analysis workflow and requires no prior programming experience.  
-
-<br /><br />
-<b>Demo: </b><a href="http://asbcb.org/seqacademy.html">SeqAcademy</a>
-<br /><br />
 
 ## Who is SeqAcademy for?
 
