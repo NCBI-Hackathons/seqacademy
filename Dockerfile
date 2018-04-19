@@ -1,5 +1,3 @@
-### forked from NCBI-Hackathons/seqacademy
-
 FROM ubuntu:latest
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 MAINTAINER Syed Hussain Ather <shussainather@gmail.com>

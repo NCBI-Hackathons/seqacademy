@@ -30,15 +30,15 @@ SeqAcademy is for students and researchers with little to no bioinformatics expe
 
 ## How do I use SeqAcademy?
 
-1. Install. Follow the instructions for your environment (https://www.docker.com/docker-mac).
+1. Install Docker. Follow the instructions for your environment (https://www.docker.com/docker-mac).
 
-2. Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online.
+2. Identify and open the terminal emulator program on your computer. Mac and Linux systems come with Terminal installed, and Windows systems come with Console. If there isn't one installed, download one online. 
 
 3. Type `pwd` and press enter. This command shows what your current working directory is. Typing commands and pressing enter will be the primary way of running commands in this tutorial. Type `ls` to display which directories and files are in this current directory.
 
-4. If you'd like to use the tutorial in this current working directory, skip to step 4. Otherwise, you may make a new directory or move to another one. To make a new directory, run `mkdir DIRECTORY` in which DIRECTORY is the name of the directory you'd like to make. To move to another directory, run `cd DIRECTORY` in which DIRECTORY is the name of the DIRETORY you'd like to move to. To move up a directory, run `cd ..`.
+4. If you'd like to use the tutorial in this current working directory, skip to step 5. Otherwise, you may make a new directory or move to another one. To make a new directory, run `mkdir DIRECTORY` in which DIRECTORY is the name of the directory you'd like to make. To move to another directory, run `cd DIRECTORY` in which DIRECTORY is the name of the DIRETORY you'd like to move to. To move up a directory, run `cd ..`. 
 
-5. Download anaconda (https://www.anaconda.com/download/) and jupyter notebook (http://jupyter.readthedocs.io/en/latest/install.html)
+5. Download anaconda (https://www.anaconda.com/download/) and jupyter notebook (http://jupyter.readthedocs.io/en/latest/install.html) 
 
 6. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git`
 
