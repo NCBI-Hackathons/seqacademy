@@ -106,11 +106,11 @@ The following data presents the RNA-Seq data used in this tutorial. This tutoria
 
 Principal component analysis (PCA) suggests gene expression for euploid yeast samples (haploid) clusters distinctly from that of the aneuploid yeast samples (diploid chromosome X).The first two PCs account for ~70% of the variance in expressed genes). Data provided by Mulla et al. (https://elifesciences.org/articles/27991). 
 
-<img src="images/volcanoplot.png" width="600" height="500">
+<img src="images/volcanoplot.png" width="600" height="450">
 
 A volcano plot of differentially expressed genes between euploid yeast colonies versus aneuploid yeast colonies. The x-axis represents the difference in gene expression between the conditions. False discovery rate (FDR), a method for controlling for multiple testing, is along the y-axis. Each point represents a tested gene (N=3,926). Red points are those reaching genome-wide significance (at FDR<0.05, N=663), whereas grey points are genes not reaching statistical significance (FDR>0.05, N=3,263). Data provided by Mulla et al. (https://elifesciences.org/articles/27991). 
 
-<img src="images/barplot_sig.png" width="600" height="500">
+<img src="images/barplot_sig.png" width="600" height="550">
 
 The relative enrichment of chrX for differentially expressed genes suggests the downstream results of this processing pipeline are consistent with biological expectations. The RNA-seq experiment was performed on yeast colonies with an extra chromosome X. Data provided by Mulla et al. (https://elifesciences.org/articles/27991). 
 
