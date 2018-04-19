@@ -64,7 +64,7 @@ The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i
 
 <img src="images/anaconda.png" width="700" height="400">
 
-<img src="images/git.png" width="700" height="400"> 
+<img src="images/git.png" width="700" height="300"> 
 
 5. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git`
 
