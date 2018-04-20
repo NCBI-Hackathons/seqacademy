@@ -32,8 +32,6 @@ SeqAcademy is for students and researchers with little to no bioinformatics expe
 
 ## What does SeqAcademy teach?
 
-<img src="images/pipeline.png" width="700" height="500">
-
 This tutorial works using HISAT2 aligner to align sample reads to a reference.
 
 <img src="images/alignment.png" width="700" height="300">
