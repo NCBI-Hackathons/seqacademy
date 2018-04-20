@@ -2,6 +2,13 @@
 ### An easy-to-use, all-in-one jupyter notebook tutorial for the RNA-Seq and ChIP-Seq pipeline
 ![Logo](images/seqacademy.png)
 
+## Contents
+
+[What is SeqAcademy?](#what-is-seqacademy)
+[Who is SeqAcademy for?](#who-is-seqacademy-for)
+[What does SeqAcademy teach?](#what-does-seqacademy-teach)
+[How do I use SeqAcademy?](#how-do-i-use-seqacademy)
+
 ##### We recommend at least 4 processors with at least 16 GB RAM each
 ##### Total disk space required (includes large SAM files): 350 GB
 
