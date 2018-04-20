@@ -40,7 +40,7 @@ It uses quantification methods (such as salmon for RNA-Seq and peak-calling for 
 
 The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq), and the results are visualized.
 
-The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i>. For RNA-Seq, yeast data between euploid and aneuoploid conditions will be compared. For ChIP-SEq, yeast data between 3AT-treated and untreated conditions will be compared.
+The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i>. For RNA-Seq, yeast data between euploid and aneuoploid conditions will be compared. For ChIP-Seq, yeast data between 3AT-treated and untreated conditions will be compared.
 
 ## How do I use SeqAcademy?
 
