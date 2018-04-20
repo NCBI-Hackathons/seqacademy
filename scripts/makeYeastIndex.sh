@@ -2,10 +2,9 @@
 mkdir yeast_index
 cd yeast_index
 #
-# Downloads sequence for the GRCm38 release 81 version of M. Musculus (mouse) from
-# Ensembl.
+# Downloads sequences for the latest Yeast release from Ensembl.
 #
-# By default, this script builds and index for just the base files,
+# By default, this script builds an index for just the base files,
 # since alignments to those sequences are the most useful.  To change
 # which categories are built by this script, edit the CHRS_TO_INDEX
 # variable below.
