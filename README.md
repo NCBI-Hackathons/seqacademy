@@ -22,7 +22,7 @@ SeqAcademy addresses these problems by providing an easy to use tutorial that ou
 
 SeqAcademy is for students and researchers with little to no bioinformatics experience interested in hands-on bioinformatics tutorials.  Anyone will feel comfortable analyzing epigenomic and RNA-Seq data using this simple educational tool.
 
-## What are the steps of this tutorial?
+## What does SeqAcademy teach?
 
 <img src="images/pipeline.png" width="700" height="500">
 
