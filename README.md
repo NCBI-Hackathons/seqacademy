@@ -5,14 +5,15 @@
 ## Contents
 
 [What is SeqAcademy?](#what-is-seqacademy)
+
 [Who is SeqAcademy for?](#who-is-seqacademy-for)
+
 [What does SeqAcademy teach?](#what-does-seqacademy-teach)
+
 [How do I use SeqAcademy?](#how-do-i-use-seqacademy)
 
 ##### We recommend at least 4 processors with at least 16 GB RAM each
 ##### Total disk space required (includes large SAM files): 350 GB
-
-[Ready to get going? Jump to "How do I use SeqAcademy?" and get started!](#how-do-i-use-seqacademy)
 
 <b>Keywords</b>:
 <i>RNA-Seq, ChIP-Seq, alignment, differential gene expression, peak-calling, education, tutorial, pipeline</i>
