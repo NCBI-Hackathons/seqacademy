@@ -20,7 +20,7 @@ if [ ! -f $F ] ; then
 	mv $F genome.fa
 fi
 
-CMD="hisat2 genome.fa genome"
+CMD="hisat2-build genome.fa genome" 
 echo Running $CMD
 if $CMD ; then
 	echo "genome index built; you may remove fasta files"
