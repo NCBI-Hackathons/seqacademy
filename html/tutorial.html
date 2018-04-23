@@ -11789,13 +11789,17 @@ div#notebook {
 </li>
 <li>ChIP-Seq<ol>
 <li>MACS</li>
-<li>bedtools</li>
+<li>Bedtools</li>
+<li>deepTools</li>
 <li>IGV</li>
 </ol>
 </li>
 <li>RNA-Seq<ol>
 <li>HTSeq</li>
+<li>featureCounts</li>
 <li>DESeq</li>
+<li>Salmon</li>
+<li>dupRadar</li>
 <li>Visualization</li>
 </ol>
 </li>
@@ -11829,7 +11833,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This tutorial uses cells written in python and unix to perform its analyses. Lines that are written in unix are prefixed by an exclamation point.</p>
 <p>Select the following cell and run it. To run a cell, select the cell, click "Cell" the upper taskbar, and select "Run Cells". Or click the cell and press shift + enter.</p>
-<p>Alternatively, the contents of any cell may be copy+pasted (with the exclamation marks removed) into the terminal emulator to run.</p>
+<p>Alternatively, the contents of any cell may be copy+pasted into the terminal emulator to run.</p>
 
 </div>
 </div>
@@ -11865,7 +11869,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda create -n tutorial hisat2 multiqc macs2 bioconductor-deseq matplotlib ggplot samtools bioconductor-rsamtools bedtools htseq 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda create -n tutorial hisat2 multiqc macs2 salmon bioconductor-deseq matplotlib ggplot samtools bioconductor-rsamtools bedtools htseq subread bioconductor-rsubread deeptools
 </pre></div>
 
 </div>
@@ -11926,15 +11930,6 @@ div#notebook {
 </ul>
 <p>These built-in functions, however, are limited, and we can make use of modules to make more sophisticated programs.</p>
 <p>Modules are Python .py files that consist of Python code. Any Python file can be referenced as a module. A Python file called hello.py has the module name of hello that can be imported into other Python files or used on the Python command line interpreter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this tutorial we'll use pandas to read a tsv file in python. pandas is an open source library with easy-to-use data structures and data analysis tools for the Python programming language. The tsv file is a file that separates data into rows and columns using tabs.</p>
 <p>Run the following cell to see what it does and observe the output</p>
 
 </div>
@@ -11942,7 +11937,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pandas</span> <span class="k">import</span> <span class="n">read_csv</span>
@@ -11971,54 +11966,12 @@ div#notebook {
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>0    RNA-Seq run SRR5494627
-1    RNA-Seq run SRR5494628
-2    RNA-Seq run SRR5494629
-3    RNA-Seq run SRR5494630
-4    RNA-Seq run SRR5494631
-5    RNA-Seq run SRR5494632
-Name: Run, dtype: object
-0    ChIP-Seq run SRR6703656
-1    ChIP-Seq run SRR6703661
-2    ChIP-Seq run SRR6703662
-3    ChIP-Seq run SRR6703663
-Name: Run, dtype: object
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/syedather/.local/lib/python3.6/site-packages/matplotlib/__init__.py:1067: UserWarning: Duplicate key in file &#34;/Users/syedather/.matplotlib/matplotlibrc&#34;, line #2
-  (fname, cnt))
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The output should show you the SRR IDs of the RNA-Seq and ChIP-Seq runs. These lines were created by reading in the tsv file using <code>read_csv</code> with the <code>sep="\t"</code> (to tell pandas that the csv file is tab-separated).</p>
-<p>Then run the following command to create the yeast index. The following command is a bash script <code>makeYeastIndex.sh</code> in the directory <code>scripts</code>. When run, the script downloads sequences for the latest Yeast release from Ensembl. By default, it builds and index for just the base files, since alignments to those sequences are the most useful.  To change which categories are built by this script, edit the CHRS_TO_INDEX variable in the <code>scripts/makeYeastIndex.sh</code> file.</p>
+<p>Then run the following command to create the yeast index.</p>
 
 </div>
 </div>
@@ -12041,7 +11994,6 @@ Name: Run, dtype: object
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Align the RNA-Seq samples using Hisat.</p>
-<p>This step will most likely take several hours. To ensure that it runs successfully, we are running hisat using <code>nohup</code>  to allow it to run even after you logout. The output from this step will be saved in a file <code>RUN.hisat2.log</code> in which RUN is the SRR ID of the run.</p>
 
 </div>
 </div>
@@ -12057,7 +12009,7 @@ Name: Run, dtype: object
     <span class="n">metrics</span> <span class="o">=</span> <span class="n">RNASeqoutputMetrics</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
     <span class="n">sam</span> <span class="o">=</span> <span class="n">RNASeqoutputSam</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
     <span class="n">bam</span> <span class="o">=</span> <span class="n">RNASeqoutputSortBam</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-    <span class="o">!</span>nohup hisat2 -x yeast_index/genome --sra-acc <span class="nv">$run</span> --new-summary --summary-file <span class="nv">$summary</span> --met-file <span class="nv">$metrics</span> -S <span class="nv">$sam</span> <span class="p">&amp;</span> &gt; <span class="nv">$run</span>.hisat2.log
+    <span class="o">!</span>hisat2 -x yeast_index/genome --sra-acc <span class="nv">$run</span> --new-summary --summary-file <span class="nv">$summary</span> --met-file <span class="nv">$metrics</span> -S <span class="nv">$sam</span>
 </pre></div>
 
 </div>
@@ -12070,7 +12022,7 @@ Name: Run, dtype: object
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Samtools">Samtools<a class="anchor-link" href="#Samtools">&#182;</a></h2><p>We'll use samtools to sort the output files and convert them to bam files.</p>
-<p>Sort the output files and convert them to bam files. Again, nohup is used to ensure it continues running.</p>
+<p>Sort the output files and convert them to bam files.</p>
 
 </div>
 </div>
@@ -12086,7 +12038,7 @@ Name: Run, dtype: object
     <span class="n">metrics</span> <span class="o">=</span> <span class="n">RNASeqoutputMetrics</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
     <span class="n">sam</span> <span class="o">=</span> <span class="n">RNASeqoutputSam</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
     <span class="n">bam</span> <span class="o">=</span> <span class="n">RNASeqoutputSortBam</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-    <span class="o">!</span>nohup samtools view -bSF4 <span class="nv">$sam</span> <span class="p">|</span> samtools sort -o <span class="nv">$bam</span> <span class="p">&amp;</span> &gt; <span class="nv">$bam</span>.out
+    <span class="o">!</span>samtools view -bSF4 <span class="nv">$sam</span> <span class="p">|</span> samtools sort -o <span class="nv">$bam</span>
     
 </pre></div>
 
@@ -12116,7 +12068,7 @@ Name: Run, dtype: object
     <span class="n">sam</span> <span class="o">=</span> <span class="n">ChIPSeqoutputSam</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
     <span class="n">bam</span> <span class="o">=</span> <span class="n">ChIPSeqoutputSortBam</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
     <span class="n">index</span> <span class="o">=</span> <span class="s2">&quot;yeast_index/genome&quot;</span>
-    <span class="o">!</span>nohup hisat2 -x <span class="nv">$index</span> --sra-acc <span class="nv">$run</span> --new-summary --summary-file <span class="nv">$summary</span> --met-file <span class="nv">$metrics</span> -S <span class="nv">$sam</span> <span class="p">&amp;</span> &gt; <span class="nv">$run</span>.hisat2.log
+    <span class="o">!</span>hisat2 -x <span class="nv">$index</span> --sra-acc <span class="nv">$run</span> --new-summary --summary-file <span class="nv">$summary</span> --met-file <span class="nv">$metrics</span> -S <span class="nv">$sam</span>
 </pre></div>
 
 </div>
@@ -12222,7 +12174,7 @@ Name: Run, dtype: object
     <span class="n">name</span> <span class="o">=</span> <span class="n">ChIPSeqTreatment</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
     <span class="n">immunoprecipitate</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">ChIPSeqTreatment</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.sorted.bam&quot;</span>
     <span class="n">control</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">ChIPSeqControl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.sorted.bam&quot;</span>
-    <span class="o">!</span>nohup macs2 callpeak -c <span class="nv">$control</span> -t <span class="nv">$immunoprecipitate</span> -n <span class="nv">$name</span> --outdir <span class="nv">$outputdirectory</span> <span class="p">&amp;</span> &gt; <span class="nv">$name</span>.macs2.log
+    <span class="o">!</span>macs2 callpeak -c <span class="nv">$control</span> -t <span class="nv">$immunoprecipitate</span> -n <span class="nv">$name</span> --outdir <span class="nv">$outputdirectory</span>
 </pre></div>
 
 </div>
@@ -12243,9 +12195,9 @@ Name: Run, dtype: object
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="bedtools">bedtools<a class="anchor-link" href="#bedtools">&#182;</a></h2><p>In this tutorial, we'll use bedtools to extract the intersecting regions of the MACS output between the experimental conditions.</p>
-<p>The bedtools suite of programs is widely used for genomic interval manipulation or "genome algebra".</p>
-<p>First we'll sort the output. The following line uses the bash <code>sort</code> command to sort the MACS output.</p>
+<h2 id="Bedtools">Bedtools<a class="anchor-link" href="#Bedtools">&#182;</a></h2><p>In this tutorial, we'll use Bedtools to extract the intersecting regions of the MACS output between the experimental conditions.</p>
+<p>The Bedtools suite of programs is widely used for genomic interval manipulation or "genome algebra".</p>
+<p>First we'll sort the output. The following line uses the <code>sort</code> command to sort the MACS output.</p>
 
 </div>
 </div>
@@ -12270,7 +12222,7 @@ Name: Run, dtype: object
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then we'll find the intersecting regions between the different experimental conditions using <code>bedtools intersect</code>.</p>
+<p>Then we'll find the intersecting regions between the different experimental conditions.</p>
 
 </div>
 </div>
@@ -12292,9 +12244,47 @@ Name: Run, dtype: object
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="deepTools">deepTools<a class="anchor-link" href="#deepTools">&#182;</a></h2><p>deepTools is a suite of python tools particularly developed for the efficient analysis of high-throughput sequencing data, such as ChIP-seq, RNA-seq or MNase-seq. In this tutorial, we'll use it on ChIP-Seq data first. This may take a few minutes.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">individual</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ChIPSeqControl</span><span class="p">):</span>
+    <span class="n">immunoprecipitatename</span> <span class="o">=</span> <span class="n">ChIPSeqTreatment</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="n">immunoprecipitate</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">ChIPSeqTreatment</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.sorted.bam&quot;</span>
+    <span class="n">immunoprecipitatebamoutput</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">immunoprecipitatename</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">immunoprecipitatename</span> <span class="o">+</span> <span class="s2">&quot;_coverage.bw&quot;</span>
+    <span class="n">fingerprintoutput</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">immunoprecipitatename</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">immunoprecipitatename</span> <span class="o">+</span> <span class="s2">&quot;_fingerprint.pdf&quot;</span>
+
+    <span class="n">controlname</span> <span class="o">=</span> <span class="n">ChIPSeqControl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="n">control</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">ChIPSeqControl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.sorted.bam&quot;</span>
+    <span class="n">controlbamoutput</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">controlname</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">controlname</span> <span class="o">+</span> <span class="s2">&quot;_coverage.bw&quot;</span>
+    
+<span class="c1">#     !samtools index $immunoprecipitate</span>
+<span class="c1">#     !samtools index $control</span>
+   
+    <span class="o">!</span>bamCoverage --normalizeUsingRPKM -b <span class="nv">$immunoprecipitate</span> -o <span class="nv">$immunoprecipitatebamoutput</span>
+    <span class="o">!</span>bamCoverage --normalizeUsingRPKM -b <span class="nv">$control</span> -o <span class="nv">$controlbamoutput</span>
+    
+    <span class="o">!</span>plotFingerprint -b <span class="nv">$immunoprecipitate</span> <span class="nv">$control</span> -o <span class="nv">$fingerprintoutput</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Integrative-Genomics-Viewer">Integrative Genomics Viewer<a class="anchor-link" href="#Integrative-Genomics-Viewer">&#182;</a></h2><p>A BAM file viewer will allow you to see your reads in an interactive graphical display. There are many different viewers available such as UCSC Genome Browser, Integrative Genomics Viewer (IGV), and NCBI Genome Workbench.</p>
 <p>To load .bam files please first do the following:</p>
-<p>Transfer the data to your computer. Copy files with scp (Linux, OSX) and WinSCP (Windows).</p>
+<p>Transfer the data to your computer. Amazon provides documentation on copying files with scp (Linux, OSX) and WinSCP (Windows).</p>
 <p>For scp, the command will be approximately: scp ubuntu@your-instance-name-or-ip-address:/home/ubuntu/data/transcript.fa</p>
 <p>Load annotation in IGV
 File -&gt; Load from File ... -&gt; ChIPSeqintersect.bed</p>
@@ -12351,6 +12341,30 @@ File -&gt; Load from File ... -&gt; ChIPSeqintersect.bed</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="featureCounts">featureCounts<a class="anchor-link" href="#featureCounts">&#182;</a></h2><p>featureCounts is a highly efficient general-purpose read summarization program that counts mapped reads for genomic features such as genes, exons, promoter, gene bodies, genomic bins and chromosomal locations. It can be used to count both RNA-seq and genomic DNA-seq reads. It is available in the SourceForge Subread package or the Bioconductor Rsubread package.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">individual</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">RNASeqoutputSortBam</span><span class="p">):</span>
+    <span class="nb">input</span> <span class="o">=</span> <span class="n">individual</span>
+    <span class="o">!</span>featureCounts -s -a <span class="nv">$gtf</span> -o test/featureCounts <span class="nv">$input</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="DESeq-(Differential-Expression-Sequencing)">DESeq (Differential Expression Sequencing)<a class="anchor-link" href="#DESeq-(Differential-Expression-Sequencing)">&#182;</a></h2><p>Estimate variance-mean dependence in count data from high-throughput sequencing assays and test for differential expression based on a model using the negative binomial distribution</p>
 
 </div>
@@ -12362,6 +12376,151 @@ File -&gt; Load from File ... -&gt; ChIPSeqintersect.bed</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>Rscript scripts/runDeseq.R
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Salmon">Salmon<a class="anchor-link" href="#Salmon">&#182;</a></h2><p>Salmon is a tool for quantifying the expression of transcripts using RNA-seq data. Salmon uses new algorithms (specifically, coupling the concept of quasi-mapping with a two-phase inference procedure) to provide accurate expression estimates very quickly (i.e. wicked-fast) and while using little memory. Salmon performs its inference using an expressive and realistic model of RNA-seq data that takes into account experimental attributes and biases commonly observed in real RNA-seq data.</p>
+<p>Salmon has two modes; alignment-based and quasi-mapping based. When you are using the alignment-based mode (i.e. feeding it a BAM file of aligned reads), you don't need to provide it with the raw reads. This is because all of the relevant information is already contained within the BAM file.</p>
+<p>In this tutorial, we will run salmon using the alignment-based method.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>wget -O data/transcript.fa.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/146/045/GCF_000146045.2_R64/GCF_000146045.2_R64_rna.fna.gz
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then unzip the transcript.fa.gz file.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gunzip data/transcript.fa.gz
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, run salmon on the transcripts and aligned bam files.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pandas</span> <span class="k">import</span> <span class="n">read_csv</span>
+
+<span class="n">RNASeqSRARunTableFile</span><span class="o">=</span><span class="s1">&#39;data/RNASeqSRA.tsv&#39;</span>
+<span class="n">RNASeqSRATable</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="n">RNASeqSRARunTableFile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">RNASeqoutrun</span> <span class="o">=</span> <span class="p">(</span><span class="n">RNASeqSRATable</span><span class="p">[</span><span class="s2">&quot;Run&quot;</span><span class="p">])</span>
+<span class="n">RNASeqBam</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">RNASeqoutrun</span> <span class="o">+</span> <span class="s2">&quot;.sorted.bam&quot;</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">individual</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">RNASeqBam</span><span class="p">):</span>
+    <span class="o">!</span>salmon quant -t data/transcript.fa -l A -a <span class="nv">$individual</span> --output test/salmon_quant
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="dupRadar">dupRadar<a class="anchor-link" href="#dupRadar">&#182;</a></h2><p>dupRadar provides an easy way to distinguish between artifactual vs natural duplicate reads in RNA-Seq data. Prior to dupRadar only global duplication rates were used and they don't take into account the effect of gene expression levels. dupRadar relates duplication rates and length normalized read counts of every gene to model the dependency of both variables.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">individual</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">RNASeqoutputSortBam</span><span class="p">):</span>
+    <span class="o">!</span>Rscript scripts/dupRadar.R <span class="nv">$individual</span> <span class="nv">$gtf</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="deepTools">deepTools<a class="anchor-link" href="#deepTools">&#182;</a></h2><p>Now we'll use deepTools on the RNA-Seq data.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">RNASeqControl</span> <span class="o">=</span> <span class="n">RNASeqSRATable</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">RNASeqSRATable</span><span class="p">[</span><span class="s2">&quot;karyotope&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Euploid&quot;</span><span class="p">][</span><span class="s2">&quot;Run&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="n">RNASeqTreatment</span> <span class="o">=</span> <span class="n">RNASeqSRATable</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">RNASeqSRATable</span><span class="p">[</span><span class="s2">&quot;karyotope&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Aneuploid&quot;</span><span class="p">][</span><span class="s2">&quot;Run&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">individual</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">RNASeqControl</span><span class="p">):</span>
+    <span class="n">outputdirectory</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">RNASeqTreatment</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">RNASeqTreatment</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="n">treatment</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">RNASeqTreatment</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.sorted.bam&quot;</span>
+    <span class="n">control</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">RNASeqControl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.sorted.bam&quot;</span>
+    
+    <span class="n">treatmentname</span> <span class="o">=</span> <span class="n">RNASeqTreatment</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="n">treatment</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">RNASeqTreatment</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.sorted.bam&quot;</span>
+    <span class="n">treatmentbamoutput</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">treatmentname</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">treatmentname</span> <span class="o">+</span> <span class="s2">&quot;_coverage.bw&quot;</span>
+    <span class="n">fingerprintoutput</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">treatmentname</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">treatmentname</span> <span class="o">+</span> <span class="s2">&quot;_fingerprint.pdf&quot;</span>
+
+    <span class="n">controlname</span> <span class="o">=</span> <span class="n">RNASeqControl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="n">control</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">RNASeqControl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.sorted.bam&quot;</span>
+    <span class="n">controlbamoutput</span> <span class="o">=</span> <span class="s2">&quot;test/&quot;</span> <span class="o">+</span> <span class="n">controlname</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">controlname</span> <span class="o">+</span> <span class="s2">&quot;_coverage.bw&quot;</span>
+    
+    <span class="o">!</span>samtools index <span class="nv">$treatment</span>
+    <span class="o">!</span>samtools index <span class="nv">$control</span>
+    
+    <span class="o">!</span>bamCoverage -b <span class="nv">$treatment</span> -o <span class="nv">$treatmentbamoutput</span>
+    <span class="o">!</span>bamCoverage -b <span class="nv">$control</span> -o <span class="nv">$controlbamoutput</span>
+    
+    <span class="o">!</span>plotFingerprint -b <span class="nv">$immunoprecipitate</span> <span class="nv">$control</span> -o <span class="nv">$fingerprintoutput</span>
 </pre></div>
 
 </div>
