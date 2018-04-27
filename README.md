@@ -15,6 +15,8 @@
 ##### We recommend at least 4 processors with at least 16 GB RAM each
 ##### Total disk space required (includes large SAM files): 350 GB
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1233661.svg)](https://doi.org/10.5281/zenodo.1233661)
+
 <b>Keywords</b>:
 <i>RNA-Seq, ChIP-Seq, alignment, differential gene expression, peak-calling, education, tutorial, pipeline</i>
 
