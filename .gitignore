@@ -1,5 +1,6 @@
 .DS_Store
 *checkpoint*
+tutorial_devel.ipynb
 test
 yeast_index
 data/transcript.fa
