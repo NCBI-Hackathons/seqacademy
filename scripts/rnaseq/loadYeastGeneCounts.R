@@ -43,7 +43,7 @@ countFiles = paste0(countFileDirectory,'/',countFiles)
 ### Next import the count files (individual .txt files) into a single YeastGeneCounts object
 YeastGeneCountList = lapply(countFiles) #Make a list of the count objects
 names(YeastGeneCountList) <- countFiles
-YeastGeneCountList = lapply(YeastGeneCountList, function(x){ 
+YeastGeneCountList = lapply(YeastGeneCountList){ 
 rownames(x)=x[,1]
 x=x[,2,drop=F]
 return(x)
