@@ -7,15 +7,14 @@ import os
 Python script for calling each HTSeq count file and running diffexp.R on it.
 """
 
-RNASeqSRARunTableFile = "data/RNASeqSRA.tsv"
-RNASeqSRATable = read_csv(RNASeqSRARunTableFile, delimiter='\t')
-RNASeqoutrun = (RNASeqSRATable["Run"])
-RNASeqoutputSam = "test/" + RNASeqoutrun + ".sam"
-RNASeqoutputAlignmentSummary = "test/" + RNASeqoutrun + ".txt"
-RNASeqoutputMetrics = "test/" + RNASeqoutrun + ".metrics"
-RNASeqoutputSortBam = "test/" + RNASeqoutrun + ".sorted.bam"
+f = "data/RNASeqSRA.tsv"
+df = read_csv(f, delimiter='\t')
+condition = df["karyotype"]
 
 os.chdir("test")
+count = 0
 for file in glob.glob("*genecount.txt"):
-     samplename = file.replace(".sorted.bam.genecount.txt", "") 
-     os.system("Rscript ../scripts/rnaseq/diffexp.R %s" % file)
+     samplename = file.replace(".sorted.bam.genecount.txt", "")
+     samplecondition = condition[count] 
+     os.system("Rscript ../scripts/rnaseq/diffexp.R %s %s %s" % (file, samplename, samplecondition))
+     count += 1
