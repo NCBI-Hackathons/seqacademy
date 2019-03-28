@@ -4,7 +4,7 @@ biocLite()
 
 gtf2 <- read.table('data/Saccharomyces_cerevisiae.R64-1-1.84.gtf', header = FALSE, sep = '\t',stringsAsFactors=FALSE)
 
-head(gtf2)
+# head(gtf2)
 colnames(gtf2) <- c("chr","source","type","start","end","score","strand","phase","attributes") 
 
 ## Function provided by https://www.biostars.org/p/272889/
