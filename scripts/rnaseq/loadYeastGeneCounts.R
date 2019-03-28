@@ -52,7 +52,7 @@ names(YeastGeneCountList) <- countFiles
 YeastGeneCountList = lapply(YeastGeneCountList, getrows) 
 
 YeastGeneCounts = do.call("cbind",YeastGeneCountList ) #Combine the list of count objects into a single data.frame
-colnames(YeastGeneCounts) <- gsub("\\..*","",basename(names(YeastGeneCountList) ) )
+colnames(YeastGeneCounts) <- (basename(names(YeastGeneCountList)) 
 
 ## Remove rows without annotation and line everything up
 YeastGeneCounts = YeastGeneCounts[YeastGeneAnnotation$gene_id,]
