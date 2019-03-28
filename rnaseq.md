@@ -51,11 +51,17 @@ and pressing enter:
 
 Align the RNA-Seq samples using Hisat.
 
-This step would normally take several hours, but the `-u 2500` part of the command tells Hisat to only align the first 2500 reads. If you want to align all reads, remove this text.
+This step would normally take several hours, but the `-u 2500` part of the command tells HISAT to only align the first 2500 reads.
 
 Run the followning:
 
 `python scripts/rnaseq/runrnaseq.py`
+
+If you want to align all reads, run `scripts/rnaseq/runrnaseqall.py` instead. Keep in mind this would take several hours so it may be beneficial to run it as:
+
+`nohup python scripts/rnaseq/runrnaseqall.py &`
+
+Nohup runs a command in the background so that you may close your computer or command line interface.
 
 ## 1B. Samtools 
 
@@ -77,15 +83,20 @@ Run:
 
 ## 2A. Differential expression analysis
 
-We run an R script `loadYeastGeneCounts.R` to quantify genetic expression over the yeast genome. We use DESeq (Differential Expression Sequencing) is used to estimate variance-mean dependence in count data from high-throughput sequencing assays and test for differential expression based on a model using the negative binomial distribution.
+We want to quantify genetic expression over the yeast genome. We use DESeq (Differential Expression Sequencing) is used to estimate variance-mean dependence in count data from high-throughput sequencing assays and test for differential expression based on a model using the negative binomial distribution.
 
-Before we proceed, we need to install xml. Run:
+However, based on how we ran the program (using  `-u 2500`) there won't be enough of a difference to perform differential analysis.
 
-`conda install -c r r-xml --yes`
+Before performing this step, we need to re-do our RNA-Seq experiment with alll the reads by running:
+
+`nohup python scripts/rnaseq/runrnaseqall.py &`
+
+As noted in 1A, `nohup` lets us run the command in the background.
 
 Then run the python script to count the genes and plot the results:
 
 `python scripts/rnaseq/diffexp.py`
+
 
 ## 2B. MultiQC
 
