@@ -1,8 +1,4 @@
-## try http:// if https:// URLs are not supported
-source("https://bioconductor.org/biocLite.R")
-biocLite()
-
-gtf2 <- read.table('data/Saccharomyces_cerevisiae.R64-1-1.84.gtf', header = FALSE, sep = '\t',stringsAsFactors=FALSE)
+gtf2 <- read.table('../data/Saccharomyces_cerevisiae.R64-1-1.84.gtf', header = FALSE, sep = '\t',stringsAsFactors=FALSE)
 
 colnames(gtf2) <- c("chr","source","type","start","end","score","strand","phase","attributes") 
 
@@ -30,7 +26,7 @@ gtf2$transcript_source <- unlist(lapply(gtf2$attributes, extract_attributes, "tr
 gtf2$transcript_biotype <- unlist(lapply(gtf2$attributes, extract_attributes, "transcript_biotype"))
 
 YeastGeneAnnotation = gtf2[gtf2$type=='gene',]
-save(YeastGeneAnnotation, file='data/yeastGeneAnnotation.rda')
+save(YeastGeneAnnotation, file='../data/yeastGeneAnnotation.rda')
 
 ## Load yeast gene counts
 
@@ -55,14 +51,14 @@ colnames(YeastGeneCounts) <- (basename(names(YeastGeneCountList)))
 ## Remove rows without annotation and line everything up
 YeastGeneCounts = YeastGeneCounts[YeastGeneAnnotation$gene_id,]
 
-expInfo = as.data.frame( data.table::fread('data/RNASeqSRA.tsv') )
+expInfo = as.data.frame( data.table::fread('../data/RNASeqSRA.tsv') )
 expInfo= expInfo[match(expInfo$Run, colnames(YeastGeneCounts) ),]
 expInfo$karyotype = factor(expInfo$karyotype, levels=c("Euploid","Aneuploid") )
 expInfo$replicate = factor(expInfo$replicate, levels=c("First","Second",'Third') )
 
 ## Load the information about the experiment
 
-save(YeastGeneCounts, expInfo, file='data/YeastGeneCounts.rda')
+save(YeastGeneCounts, expInfo, file='../data/YeastGeneCounts.rda')
 
 filtYeastGeneCounts = YeastGeneCounts[rowSums(YeastGeneCounts)>0,]
 pcainput = t(log2(filtYeastGeneCounts+1))
