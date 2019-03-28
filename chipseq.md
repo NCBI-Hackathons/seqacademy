@@ -111,4 +111,4 @@ We use the 'hisat_output' option because we are analyzing data downloaded and al
 
 Run the code using:
 
-python scripts/chipseq/multiqc.py
+`python scripts/chipseq/multiqc.py`
