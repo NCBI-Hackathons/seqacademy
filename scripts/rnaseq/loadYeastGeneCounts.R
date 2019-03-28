@@ -40,14 +40,16 @@ countFiles = list.files(countFileDirectory,pattern='genecount.txt') #Find the co
 countFiles=countFiles[!grepl(pattern="bam",x=countFiles)] #Exclude count files with '.bam' in the name
 countFiles = paste0(countFileDirectory,'/',countFiles)
 
-### Next import the count files (individual .txt files) into a single YeastGeneCounts object
-YeastGeneCountList = lapply(countFiles) #Make a list of the count objects
-names(YeastGeneCountList) <- countFiles
-YeastGeneCountList = lapply(YeastGeneCountList){ 
+getrows <- function(x) {
 rownames(x)=x[,1]
 x=x[,2,drop=F]
 return(x)
- })
+}
+
+### Next import the count files (individual .txt files) into a single YeastGeneCounts object
+YeastGeneCountList = lapply(countFiles, read.table) #Make a list of the count objects
+names(YeastGeneCountList) <- countFiles
+YeastGeneCountList = lapply(YeastGeneCountList, getrows) 
 
 YeastGeneCounts = do.call("cbind",YeastGeneCountList ) #Combine the list of count objects into a single data.frame
 colnames(YeastGeneCounts) <- gsub("\\..*","",basename(names(YeastGeneCountList) ) )
