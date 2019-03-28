@@ -34,11 +34,11 @@ Modules are Python .py files that consist of Python code. Any Python file can be
 
 You may view the code by running:
 
-less scripts/rnaseq/setuprnaseq.py
+`less scripts/rnaseq/setuprnaseq.py`
 
 Run the code using:
 
-python scripts/rnaseq/setuprnaseq.py
+`python scripts/rnaseq/setuprnaseq.py`
 
 Then run the following command to create the yeast index. The next cell is a bash script. When run, the script downloads sequences for the latest Yeast release from Ensembl. By default, it builds and index for just the base files, since alignments to those sequences are the most useful.  To change which categories are built by this script, edit the CHRS_TO_INDEX variable in the following cell. 
 
@@ -47,7 +47,7 @@ Our next step is to `cd` into the new directory, yeast_index, and download the s
 Run the following code by typing the following line into the command line
 and pressing enter:
 
-bash scripts/rnaseq/index.sh
+`bash scripts/rnaseq/index.sh`
 
 Align the RNA-Seq samples using Hisat.
 
@@ -55,7 +55,7 @@ This step would normally take several hours, but the `-u 100` part of the comman
 
 Run the followning:
 
-python scripts/rnaseq/runrnaseq.py
+`python scripts/rnaseq/runrnaseq.py`
 
 ## 1B. Samtools 
 
@@ -63,7 +63,7 @@ We'll use samtools to sort the output files and convert them to bam files.
 
 Sort the output files and convert them to bam files.
 
-python scripts/rnaseq/samtools.py
+`python scripts/rnaseq/samtools.py`
 
 # 2. Downstream analysis 
 ## 2A. High-throughput sequencing
@@ -74,15 +74,15 @@ HTSeq (High-throughput sequencing) is a Python library to facilitate the rapid d
 
 DESeq (Differential Expression Sequencing) is used to estimate variance-mean dependence in count data from high-throughput sequencing assays and test for differential expression based on a model using the negative binomial distribution.
 
-Run it using the following:
+It should take about 5-10 minutes. Run it using the following:
 
-R scripts/rnaseq/deseq.R
+`Rscript scripts/rnaseq/deseq.R`
 
 ## 2C. Visualization
 
 The following script performs principal component analysis and creates volcano plots and bar graphs of RNA-Seq expression.
 
-R scripts/rnaseq/visualize.R
+`Rscript scripts/rnaseq/visualize.R`
 
 ## 2D. MultiQC
 
@@ -93,3 +93,5 @@ MultiQC was installed earlier in the tutorial, so all we need to do is run it on
 MultiQC is configured to run the same no matter what type of sequencing data is available, therefore the same command can be used to analyze either our RNAseq data or our ChIPseq data.  We include the option 'hisat_output' since we are aligning using the HISAT2 program.  See http://multiqc.info/docs/ for more information.
 
 We use the 'hisat_output' option because we are analyzing data downloaded and aligned using the HISAT2 program.  We use the '--force' option to overwrite any previous versions of the multiqc_report.  '--quiet' only shows log warnings.
+
+`multiqc test`

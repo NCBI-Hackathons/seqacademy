@@ -109,6 +109,6 @@ MultiQC is configured to run the same no matter what type of sequencing data is 
 
 We use the 'hisat_output' option because we are analyzing data downloaded and aligned using the HISAT2 program.  We use the '--force' option to overwrite any previous versions of the multiqc_report.  '--quiet' only shows log warnings.
 
-Run the code using:
+Use:
 
-`python scripts/chipseq/multiqc.py`
+`multiqc test`
