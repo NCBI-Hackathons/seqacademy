@@ -18,8 +18,6 @@ install.packages("XML", repos = "http://cran.us.r-project.org")
 
 #sudo apt install yum
 
-biocLite('rtracklayer')
-
 ## Load the yeast genome annotation (gtf file)
 install.packages("rtracklayer", repos = "http://cran.us.r-project.org")
 library('rtracklayer')
