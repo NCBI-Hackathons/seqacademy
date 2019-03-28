@@ -1,26 +1,6 @@
-## First install bioconductor
-
 ## try http:// if https:// URLs are not supported
 source("https://bioconductor.org/biocLite.R")
 biocLite()
-
-## Install rtracklayer, a bioconductor package
-
-## In shell:
-
-#sudo apt-get update
-#sudo apt-get install libxml2-dev
-install.packages("XML", repos = "http://cran.us.r-project.org")
-
-## In Shell: to install Rcurl
-
-#conda install r-rcurl
-
-#sudo apt install yum
-
-## Load the yeast genome annotation (gtf file)
-install.packages("rtracklayer", repos = "http://cran.us.r-project.org")
-library('rtracklayer')
 
 gtf2 <- read.table('data/Saccharomyces_cerevisiae.R64-1-1.84.gtf', header = FALSE, sep = '\t',stringsAsFactors=FALSE)
 
