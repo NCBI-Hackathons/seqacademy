@@ -93,8 +93,10 @@ colnames(YeastGeneCounts) <- NULL
 
 YeastGeneCounts <- as.numeric(unlist(YeastGeneCounts))
 
+YeastcolData <- list("I", "II", "III", "IV", "V", "VI", "VII", "VIII", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI")
+
 dds <- DESeqDataSetFromMatrix(countData = YeastGeneCounts,
-                              colData = expInfo,
+                              colData = YeastcolData,
                               design= ~ karyotype )
 
 dds <- dds [rowSums(counts(dds))>1,]
