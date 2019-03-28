@@ -4,12 +4,13 @@
 1. Alignment
     A. HISAT 
     B. Samtools
-    C. Gene counts
+    C. dupRadar
 2. Downstream analysis
     A. High-throughput sequencing
     B. Differential Expression Sequencing
-    C. Visualization
-    D. MultiQC
+    C. Gene counts
+    D. Visualization
+    E. MultiQC
 
 # 1. Alignment
 ## 1A. HISAT (Hierarchical Indexing for Spliced Alignment of Transcripts)
@@ -66,13 +67,13 @@ Sort the output files and convert them to bam files.
 
 `python scripts/rnaseq/samtools.py`
 
-## 1C. Gene counts
+## 1C. dupRadar
 
-We run an R script `loadYeastGeneCounts.R` to quantify genetic expression over the yeast genome.
+We'll use dupRadar to detect duplicates and count the number of each gene. This script is written in R so we use `Rscript`.
 
 Run:
 
-`Rscript scripts/rnaseq/loadYeastGeneCounts.R`
+`Rscript scripts/rnaseq/dupRadar.R`
 
 # 2. Downstream analysis 
 ## 2A. High-throughput sequencing
@@ -85,15 +86,23 @@ DESeq (Differential Expression Sequencing) is used to estimate variance-mean dep
 
 It should take about 5-10 minutes. Run it using the following:
 
-`Rscript scripts/rnaseq/deseq.R`
+`Rscript scripts/rnaseq/DESeq.R`
 
-## 2C. Visualization
+## 2C. Gene counts
+
+We run an R script `loadYeastGeneCounts.R` to quantify genetic expression over the yeast genome.
+
+Run:
+
+`Rscript scripts/rnaseq/loadYeastGeneCounts.R`
+
+## 2D. Visualization
 
 The following script performs principal component analysis and creates volcano plots and bar graphs of RNA-Seq expression.
 
 `Rscript scripts/rnaseq/visualize.R`
 
-## 2D. MultiQC
+## 2E. MultiQC
 
 This section details quality control checks on the read data from either RNAseq or ChIPseq data using MultiQC. MultiQC takes all output and log files from an alignment software program and aggregates the information from all samples into one convenient report (html by default).
 
