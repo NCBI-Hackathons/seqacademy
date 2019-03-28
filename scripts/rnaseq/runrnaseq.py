@@ -15,4 +15,4 @@ for index, individual in enumerate(RNASeqoutrun):
     metrics = RNASeqoutputMetrics[index]
     sam = RNASeqoutputSam[index]
     bam = RNASeqoutputSortBam[index]
-    os.system("hisat2 -u 1000 -x yeast_index/genome --sra-acc {0} --new-summary --summary-file {1} --met-file {2} -S {3}".format(run, summary, metrics, sam))
+    os.system("hisat2 -u 2000 -x yeast_index/genome --sra-acc {0} --new-summary --summary-file {1} --met-file {2} -S {3}".format(run, summary, metrics, sam))
