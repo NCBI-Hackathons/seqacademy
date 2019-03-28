@@ -81,7 +81,11 @@ Run:
 
 We run an R script `loadYeastGeneCounts.R` to quantify genetic expression over the yeast genome.
 
-Run:
+Before we proceed, we need to install xml. Run:
+
+`conda install -c r r-xml`
+
+Then run the script to count the genes:
 
 `Rscript scripts/rnaseq/loadYeastGeneCounts.R`
 
