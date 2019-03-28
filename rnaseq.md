@@ -83,7 +83,7 @@ We run an R script `loadYeastGeneCounts.R` to quantify genetic expression over t
 
 Before we proceed, we need to install xml. Run:
 
-`conda install -c r r-xml`
+`conda install -c r r-xml --yes`
 
 Then run the script to count the genes:
 
