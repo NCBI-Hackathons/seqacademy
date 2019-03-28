@@ -83,11 +83,9 @@ Before we proceed, we need to install xml. Run:
 
 `conda install -c r r-xml --yes`
 
-Then run the scripts to count the genes and plot the results:
+Then run the python script to count the genes and plot the results:
 
-`Rscript scripts/rnaseq/pca.R`
-
-`Rscript scripts/rnaseq/DESeq.R`
+`python scripts/rnaseq/diffexp.py`
 
 ## 2B. MultiQC
 
