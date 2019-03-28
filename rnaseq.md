@@ -4,6 +4,7 @@
 1. Alignment
     A. HISAT 
     B. Samtools
+    C. Gene counts
 2. Downstream analysis
     A. High-throughput sequencing
     B. Differential Expression Sequencing
@@ -51,7 +52,7 @@ and pressing enter:
 
 Align the RNA-Seq samples using Hisat.
 
-This step would normally take several hours, but the `-u 100` part of the command tells Hisat to only align the first 100 reads. If you want to align all reads, remove this text.
+This step would normally take several hours, but the `-u 1000` part of the command tells Hisat to only align the first 1000 reads. If you want to align all reads, remove this text.
 
 Run the followning:
 
@@ -64,6 +65,14 @@ We'll use samtools to sort the output files and convert them to bam files.
 Sort the output files and convert them to bam files.
 
 `python scripts/rnaseq/samtools.py`
+
+## 1C. Gene counts
+
+We run a unix-based bash script `loadYeastGeneCounts.sh` to quantify genetic expression over the yeast genome.
+
+Run:
+
+`Rscript scripts/rnaseq/loadYeastGeneCounts.R`
 
 # 2. Downstream analysis 
 ## 2A. High-throughput sequencing
