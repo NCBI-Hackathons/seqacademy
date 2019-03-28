@@ -91,6 +91,8 @@ library("DESeq2")
 
 colnames(YeastGeneCounts) <- NULL
 
+YeastGeneCounts <- as.numeric(unlist(YeastGeneCounts))
+
 dds <- DESeqDataSetFromMatrix(countData = YeastGeneCounts,
                               colData = expInfo,
                               design= ~ karyotype )
