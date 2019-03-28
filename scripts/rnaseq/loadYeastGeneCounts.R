@@ -10,7 +10,7 @@ colnames(gtf2) <- c("chr","source","type","start","end","score","strand","phase"
 ## Function provided by https://www.biostars.org/p/272889/
 extract_attributes <- function(gtf_attributes, att_of_interest){
   att <- strsplit(gtf_attributes, "; ")
-  att <- gsub("\"","",unlist(att))
+  att <- unlist(att)
   if(!is.null(unlist(strsplit(att[grep(att_of_interest, att)], " ")))){
     return( unlist(strsplit(att[grep(att_of_interest, att)], " "))[2])
   }else{
