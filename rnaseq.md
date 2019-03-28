@@ -7,8 +7,8 @@
     C. dupRadar
 2. Downstream analysis
     A. High-throughput sequencing
-    B. Differential Expression Sequencing
-    C. Gene counts
+    B. Gene counts
+    C. Differential Expression Sequencing
     D. Visualization
     E. MultiQC
 
@@ -80,21 +80,21 @@ Run:
 
 HTSeq (High-throughput sequencing) is a Python library to facilitate the rapid development of RNA-Seq analysis. HTSeq offers parsers for many common data formats in HTS projects, as well as classes to represent data, such as genomic coordinates, sequences, sequencing reads, alignments, gene model information and variant calls, and provides data structures that allow for querying via genomic coordinates. In this tutorial we will use htseq-count, a tool developed with HTSeq that preprocesses RNA-Seq data for differential expression analysis by counting the overlap of reads with genes. 
 
-## 2B. Differential Expression Sequencing
-
-DESeq (Differential Expression Sequencing) is used to estimate variance-mean dependence in count data from high-throughput sequencing assays and test for differential expression based on a model using the negative binomial distribution.
-
-It should take about 5-10 minutes. Run it using the following:
-
-`Rscript scripts/rnaseq/DESeq.R`
-
-## 2C. Gene counts
+## 2B. Gene counts
 
 We run an R script `loadYeastGeneCounts.R` to quantify genetic expression over the yeast genome.
 
 Run:
 
 `Rscript scripts/rnaseq/loadYeastGeneCounts.R`
+
+## 2C. Differential Expression Sequencing
+
+DESeq (Differential Expression Sequencing) is used to estimate variance-mean dependence in count data from high-throughput sequencing assays and test for differential expression based on a model using the negative binomial distribution.
+
+It should take about 5-10 minutes. Run it using the following:
+
+`Rscript scripts/rnaseq/DESeq.R`
 
 ## 2D. Visualization
 
