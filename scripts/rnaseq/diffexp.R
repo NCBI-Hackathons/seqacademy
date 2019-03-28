@@ -37,7 +37,6 @@ save(YeastGeneAnnotation, file='data/yeastGeneAnnotation.rda')
 
 countFileDirectory = 'test' #Directory that the count files are stored in
 countFiles = list.files(countFileDirectory,pattern='genecount.txt') #Find the count files in this directory
-countFiles=countFiles[!grepl(pattern="bam",x=countFiles)] #Exclude count files with '.bam' in the name
 countFiles = paste0(countFileDirectory,'/',countFiles)
 
 getrows <- function(x) {
@@ -52,7 +51,7 @@ names(YeastGeneCountList) <- countFiles
 YeastGeneCountList = lapply(YeastGeneCountList, getrows) 
 
 YeastGeneCounts = do.call("cbind",YeastGeneCountList ) #Combine the list of count objects into a single data.frame
-colnames(YeastGeneCounts) <- (basename(names(YeastGeneCountList)) 
+colnames(YeastGeneCounts) <- (basename(names(YeastGeneCountList))) 
 
 ## Remove rows without annotation and line everything up
 YeastGeneCounts = YeastGeneCounts[YeastGeneAnnotation$gene_id,]
@@ -65,12 +64,10 @@ expInfo$replicate = factor(expInfo$replicate, levels=c("First","Second",'Third')
 
 ## Load the information about the experiment
 
-
 save(YeastGeneCounts, expInfo, file='data/YeastGeneCounts.rda')
 
-
 filtYeastGeneCounts = YeastGeneCounts[rowSums(YeastGeneCounts)>0,]
-CountsPCA = prcomp( t(log2(filtYeastGeneCounts+1) ),scale=T )$x
+CountsPCA = prcomp( t(log2(filtYeastGeneCounts+1) ))$x
 
 pdf('test/pca.pdf',height=8,width=8)
 par(mar=c(5,6,4,1)+.5)
