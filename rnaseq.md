@@ -6,13 +6,13 @@
     B. Samtools
     C. dupRadar
 2. Downstream analysis
-    A. High-throughput sequencing
-    B. Gene counts
-    C. Differential Expression Sequencing
-    D. Visualization
-    E. MultiQC
+    A. Gene counts
+    B. Differential Expression Sequencing
+    C. Visualization
+    D. MultiQC
 
 # 1. Alignment
+
 ## 1A. HISAT (Hierarchical Indexing for Spliced Alignment of Transcripts)
 
 In this tutorial, we'll use Hisat to align the sample reads to a reference genome. Hisat automatically downloads and preprocesses the reads so they're ready to be aligned. Hisat (hierarchical indexing for spliced alignment of transcripts) is a highly efficient system for aligning reads from RNA sequencing experiments. HISAT uses an indexing scheme based on the Burrows-Wheeler transform and the Ferragina-Manzini (FM) index, employing two types of indexes for alignment: a whole-genome FM index to anchor each alignment and numerous local FM indexes for very rapid extensions of these alignments. HISAT’s hierarchical index for the human genome contains 48,000 local FM indexes, each representing a genomic region of ~64,000 bp.
@@ -44,7 +44,7 @@ Run the code using:
 
 Then run the following command to create the yeast index. The next cell is a bash script. When run, the script downloads sequences for the latest Yeast release from Ensembl. By default, it builds and index for just the base files, since alignments to those sequences are the most useful.  To change which categories are built by this script, edit the CHRS_TO_INDEX variable in the following cell. 
 
-Our next step is to `cd` into the new directory, yeast_index, and download the sequences for release 84 of the Saccharomyces cerevisiae genome.  We will only download the top-level sequence in order to save time.  
+Our next step is to download the sequences for release 84 of the Saccharomyces cerevisiae genome.  We will only download the top-level sequence in order to save time.  
 
 Run the following code by typing the following line into the command line
 and pressing enter:
@@ -75,12 +75,9 @@ Run:
 
 `python scripts/rnaseq/dupRadar.py`
 
-# 2. Downstream analysis 
-## 2A. High-throughput sequencing
+# 2. Downstream analysis
 
-HTSeq (High-throughput sequencing) is a Python library to facilitate the rapid development of RNA-Seq analysis. HTSeq offers parsers for many common data formats in HTS projects, as well as classes to represent data, such as genomic coordinates, sequences, sequencing reads, alignments, gene model information and variant calls, and provides data structures that allow for querying via genomic coordinates. In this tutorial we will use htseq-count, a tool developed with HTSeq that preprocesses RNA-Seq data for differential expression analysis by counting the overlap of reads with genes. 
-
-## 2B. Gene counts
+## 2A. Gene counts
 
 We run an R script `loadYeastGeneCounts.R` to quantify genetic expression over the yeast genome.
 
@@ -88,7 +85,7 @@ Run:
 
 `Rscript scripts/rnaseq/loadYeastGeneCounts.R`
 
-## 2C. Differential Expression Sequencing
+## 2B. Differential Expression Sequencing
 
 DESeq (Differential Expression Sequencing) is used to estimate variance-mean dependence in count data from high-throughput sequencing assays and test for differential expression based on a model using the negative binomial distribution.
 
@@ -96,13 +93,13 @@ It should take about 5-10 minutes. Run it using the following:
 
 `Rscript scripts/rnaseq/DESeq.R`
 
-## 2D. Visualization
+## 2C. Visualization
 
 The following script performs principal component analysis and creates volcano plots and bar graphs of RNA-Seq expression.
 
 `Rscript scripts/rnaseq/visualize.R`
 
-## 2E. MultiQC
+## 2D. MultiQC
 
 This section details quality control checks on the read data from either RNAseq or ChIPseq data using MultiQC. MultiQC takes all output and log files from an alignment software program and aggregates the information from all samples into one convenient report (html by default).
 

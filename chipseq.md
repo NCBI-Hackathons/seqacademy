@@ -10,6 +10,7 @@
     D. MultiQC
 
 # 1. Alignment
+
 ## 1A. HISAT (Hierarchical Indexing for Spliced Alignment of Transcripts)
 
 In this tutorial, we'll use Hisat to align the sample reads to a reference genome. Hisat automatically downloads and preprocesses the reads so they're ready to be aligned. Hisat (hierarchical indexing for spliced alignment of transcripts) is a highly efficient system for aligning reads from RNA sequencing experiments. HISAT uses an indexing scheme based on the Burrows-Wheeler transform and the Ferragina-Manzini (FM) index, employing two types of indexes for alignment: a whole-genome FM index to anchor each alignment and numerous local FM indexes for very rapid extensions of these alignments. HISAT’s hierarchical index for the human genome contains 48,000 local FM indexes, each representing a genomic region of ~64,000 bp.
