@@ -16,7 +16,7 @@ extract_attributes <- function(gtf_attributes, att_of_interest){
     return(NA)}
 }
 
-# this is how to, for example, extract the values for the various attributes of interest
+# extract values of interest
 gtf2$gene_id <- unlist(lapply(gtf2$attributes, extract_attributes, "gene_id"))
 gtf2$gene_biotype <- unlist(lapply(gtf2$attributes, extract_attributes, "gene_biotype"))
 gtf2$gene_name <- unlist(lapply(gtf2$attributes, extract_attributes, "gene_name"))
@@ -56,7 +56,7 @@ colnames(YeastGeneCounts) <- (basename(names(YeastGeneCountList)))
 YeastGeneCounts = YeastGeneCounts[YeastGeneAnnotation$gene_id,]
 
 expInfo = as.data.frame( data.table::fread('data/RNASeqSRA.tsv') )
-colnames(YeastGeneCounts) <- NULL
+#colnames(YeastGeneCounts) <- NULL
 expInfo= expInfo[match(expInfo$Run, colnames(YeastGeneCounts) ),]
 expInfo$karyotype = factor(expInfo$karyotype, levels=c("Euploid","Aneuploid") )
 expInfo$replicate = factor(expInfo$replicate, levels=c("First","Second",'Third') )
@@ -88,9 +88,9 @@ dev.off()
 summary(prcomp( t(log2(filtYeastGeneCounts+1) ) ))
 
 ## Differential gene expression with DESeq2
-biocLite('DESeq2')
-
 library("DESeq2")
+
+YeastGeneCounts <- as.data.frame.matrix(YeastGeneCounts)
 
 dds <- DESeqDataSetFromMatrix(countData = YeastGeneCounts,
                               colData = expInfo,
