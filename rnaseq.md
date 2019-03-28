@@ -7,9 +7,8 @@
     C. dupRadar
 2. Downstream analysis
     A. Gene counts
-    B. Differential Expression Sequencing
-    C. Visualization
-    D. MultiQC
+    B. Visualization
+    C. MultiQC
 
 # 1. Alignment
 
@@ -79,7 +78,7 @@ Run:
 
 ## 2A. Gene counts
 
-We run an R script `loadYeastGeneCounts.R` to quantify genetic expression over the yeast genome.
+We run an R script `loadYeastGeneCounts.R` to quantify genetic expression over the yeast genome. We use DESeq (Differential Expression Sequencing) is used to estimate variance-mean dependence in count data from high-throughput sequencing assays and test for differential expression based on a model using the negative binomial distribution.
 
 Before we proceed, we need to install xml. Run:
 
@@ -89,21 +88,13 @@ Then run the script to count the genes:
 
 `Rscript scripts/rnaseq/loadYeastGeneCounts.R`
 
-## 2B. Differential Expression Sequencing
-
-DESeq (Differential Expression Sequencing) is used to estimate variance-mean dependence in count data from high-throughput sequencing assays and test for differential expression based on a model using the negative binomial distribution.
-
-It should take about 5-10 minutes. Run it using the following:
-
-`Rscript scripts/rnaseq/DESeq.R`
-
-## 2C. Visualization
+## 2B. Visualization
 
 The following script performs principal component analysis and creates volcano plots and bar graphs of RNA-Seq expression.
 
 `Rscript scripts/rnaseq/visualize.R`
 
-## 2D. MultiQC
+## 2C. MultiQC
 
 This section details quality control checks on the read data from either RNAseq or ChIPseq data using MultiQC. MultiQC takes all output and log files from an alignment software program and aggregates the information from all samples into one convenient report (html by default).
 
