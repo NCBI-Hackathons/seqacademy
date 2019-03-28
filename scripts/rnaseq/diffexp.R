@@ -88,7 +88,7 @@ library("GenomicDataCommons")
 
 args = commandArgs(trailingOnly = TRUE)
 
-HTSeqcount <- readHTSeqFile(args[1])
+HTSeqCount <- readHTSeqFile(args[1])
 
 dds <- DESeqDataSetFromHTSeqCount(HTSeqCount, design=~karyotype)
 
