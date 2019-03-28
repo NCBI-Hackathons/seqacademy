@@ -53,7 +53,7 @@ and pressing enter:
 
 Align the RNA-Seq samples using Hisat.
 
-This step would normally take several hours, but the `-u 1000` part of the command tells Hisat to only align the first 1000 reads. If you want to align all reads, remove this text.
+This step would normally take several hours, but the `-u 2000` part of the command tells Hisat to only align the first 2000 reads. If you want to align all reads, remove this text.
 
 Run the followning:
 
@@ -69,11 +69,11 @@ Sort the output files and convert them to bam files.
 
 ## 1C. dupRadar
 
-We'll use dupRadar to detect duplicates and count the number of each gene. This script is written in R so we use `Rscript`.
+We'll use dupRadar to detect duplicates and count the number of each gene. This script is written in python, but it calls a script written in R `dupRadar.R`.
 
 Run:
 
-`Rscript scripts/rnaseq/dupRadar.R`
+`python scripts/rnaseq/dupRadar.py`
 
 # 2. Downstream analysis 
 ## 2A. High-throughput sequencing
