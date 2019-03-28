@@ -85,7 +85,9 @@ summary(prcomp( t(log2(filtYeastGeneCounts+1) ) ))
 ## Differential gene expression with DESeq2
 library("DESeq2")
 
-HTSeqcount <- readHTSeqFile(arg[1])
+fname = system.file(package="GenomicDataCommons", arg[1])
+
+HTSeqcount <- readHTSeqFile(fname)
 
 dds <- DESeqDataSetFromHTSeqCount(HTSeqCount, design=~karyotype)
 
