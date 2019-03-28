@@ -17,4 +17,4 @@ for index, individual in enumerate(ChIPSeqoutrun):
     sam = ChIPSeqoutputSam[index]
     bam = ChIPSeqoutputSortBam[index]
     index = "yeast_index/genome"
-    os.system("hisat2 -u 100 -p 2 -x {0} --sra-acc {1} --new-summary --summary-file {2} --met-file {3} -S {4}".format(index, run, summary, metrics, sam))
+    os.system("hisat2 -u 1000 -p 2 -x {0} --sra-acc {1} --new-summary --summary-file {2} --met-file {3} -S {4}".format(index, run, summary, metrics, sam))

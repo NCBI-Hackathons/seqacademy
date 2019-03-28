@@ -22,8 +22,3 @@ for index, individual in enumerate(ChIPSeqoutrun):
     bam = ChIPSeqoutputSortBam[index]
     os.system("samtools view -bSF4 {0} | samtools sort -o {1}".format(sam, bam))
 
-for index, individual in enumerate(ChIPSeqTreatment):
-    name = ChIPSeqTreatment.iloc[index]
-    macs_output = "test/" + name + "/" + name + "_peaks.narrowPeak"
-    sort = "test/" + name + "/" + name + "_peaks.narrowPeak.sorted"
-    os.system("sort -k 1,1 -k2,2n {0} > {1}".format(macs_output, sort))
