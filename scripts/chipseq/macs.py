@@ -1,6 +1,10 @@
 from pandas import read_csv
 import os
 
+"""
+Run MACS to count peaks among the aligned reads.
+"""
+
 ChIPSeqSRARunTableFile='data/ChIPSeqSRA.tsv'
 ChIPSeqSRATable = read_csv(ChIPSeqSRARunTableFile, delimiter='\t')
 ChIPSeqoutrun = (ChIPSeqSRATable["Run"])

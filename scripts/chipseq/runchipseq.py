@@ -2,6 +2,10 @@ import subprocess
 import os
 from pandas import read_csv
 
+"""
+Run the ChIP-Seq aligner using HISAT
+"""
+
 ChIPSeqSRARunTableFile='data/ChIPSeqSRA.tsv'
 ChIPSeqSRATable = read_csv(ChIPSeqSRARunTableFile, delimiter='\t')
 ChIPSeqoutrun = (ChIPSeqSRATable["Run"])

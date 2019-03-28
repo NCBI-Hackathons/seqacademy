@@ -1,6 +1,10 @@
 import os
 from pandas import read_csv
 
+"""
+Run samtools to sort the reads.
+"""
+
 ChIPSeqSRARunTableFile='data/ChIPSeqSRA.tsv'
 ChIPSeqSRATable = read_csv(ChIPSeqSRARunTableFile, delimiter='\t')
 ChIPSeqoutrun = (ChIPSeqSRATable["Run"])
