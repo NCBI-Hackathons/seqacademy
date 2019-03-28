@@ -4,7 +4,6 @@ biocLite()
 
 gtf2 <- read.table('data/Saccharomyces_cerevisiae.R64-1-1.84.gtf', header = FALSE, sep = '\t',stringsAsFactors=FALSE)
 
-# head(gtf2)
 colnames(gtf2) <- c("chr","source","type","start","end","score","strand","phase","attributes") 
 
 ## Function provided by https://www.biostars.org/p/272889/
@@ -57,7 +56,7 @@ colnames(YeastGeneCounts) <- (basename(names(YeastGeneCountList)))
 YeastGeneCounts = YeastGeneCounts[YeastGeneAnnotation$gene_id,]
 
 expInfo = as.data.frame( data.table::fread('data/RNASeqSRA.tsv') )
-head(expInfo)
+colnames(YeastGeneCounts) <- NULL
 expInfo= expInfo[match(expInfo$Run, colnames(YeastGeneCounts) ),]
 expInfo$karyotype = factor(expInfo$karyotype, levels=c("Euploid","Aneuploid") )
 expInfo$replicate = factor(expInfo$replicate, levels=c("First","Second",'Third') )
@@ -67,7 +66,7 @@ expInfo$replicate = factor(expInfo$replicate, levels=c("First","Second",'Third')
 save(YeastGeneCounts, expInfo, file='data/YeastGeneCounts.rda')
 
 filtYeastGeneCounts = YeastGeneCounts[rowSums(YeastGeneCounts)>0,]
-CountsPCA = prcomp( t(log2(filtYeastGeneCounts+1) ))$x
+CountsPCA = prcomp( t(log2(filtYeastGeneCounts+1)))$x
 
 pdf('test/pca.pdf',height=8,width=8)
 par(mar=c(5,6,4,1)+.5)
@@ -95,8 +94,6 @@ library("DESeq2")
 dds <- DESeqDataSetFromMatrix(countData = YeastGeneCounts,
                               colData = expInfo,
                               design= ~ karyotype )
-
-
 
 dds <- dds [rowSums(counts(dds))>1,]
 dds <- DESeq(dds)
