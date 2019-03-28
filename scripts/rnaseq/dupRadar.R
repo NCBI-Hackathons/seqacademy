@@ -1,28 +1,31 @@
 library(dupRadar)
+
 args = commandArgs(trailingOnly=TRUE)
 bam <- args[1]
 gtf <- args[2]
 sample <- basename(bam)
 dm <- analyzeDuprates(bam, gtf, TRUE, FALSE, 5, tmpDir = "tempdir")
+
 dm$mhRate <- (dm$allCountsMulti - dm$allCounts) / dm$allCountsMulti
-bitmap(file=paste("../test/dupRadar/", sample, "multimapping_histogram.png"))
+bitmap(file=paste("test/dupRadar/", sample, "multimapping_histogram.png"))
 hist(dm$mhRate, breaks=50, main=basename(bam),
     xlab="Multimapping rate per gene", ylab="Frequency")
 dev.off()
-bitmap(file=paste("../test/dupRadar/", sample, "_density_scatter.png"))
+bitmap(file=paste("test/dupRadar/", sample, "_density_scatter.png"))
 duprateExpDensPlot(dm, main=basename(bam))
 dev.off()
-bitmap(file=paste("../test/dupRadar/", sample, "_expression_histogram.png"))
+bitmap(file=paste("test/dupRadar/", sample, "_expression_histogram.png"))
 expressionHist(dm)
 dev.off()
-bitmap(file=paste("../test/dupRadar/", sample, "_expression_boxplot"))
+bitmap(file=paste("test/dupRadar/", sample, "_expression_boxplot"))
 par(mar=c(10,4,4,2)+.1)
 duprateExpBoxplot(dm, main=basename(bam))
 dev.off()
-bitmap(file=paste("../test/dupRadar/", sample, "_expression_barplot.png")
+bitmap(file=paste("test/dupRadar/", sample, "_expression_barplot.png")
 readcountExpBoxplot(dm)
 dev.off()
-write.table(dm, file=paste("../test/dupRadar/", sample, "_dm"), sep="\\t")
+write.table(dm, file=paste("test/dupRadar/", sample, "_dm"), sep="\\t")
+
 # The following is from
 # https://github.com/ewels/NGI-RNAseq/blob/master/bin/dupRadar.r
 fit <- duprateExpFit(DupMat=dm)
