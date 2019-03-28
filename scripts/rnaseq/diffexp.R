@@ -64,7 +64,7 @@ filtYeastGeneCounts = YeastGeneCounts[rowSums(YeastGeneCounts)>0,]
 pcainput = t(log2(filtYeastGeneCounts+1))
 CountsPCA = prcomp( pcainput)$x
 
-pdf('test/pca.pdf',height=8,width=8)
+pdf('../test/pca.pdf',height=8,width=8)
 par(mar=c(5,6,4,1)+.5)
 plot(CountsPCA[,1],CountsPCA[,2],col=expInfo$karyotype,pch=16,cex=2, xlab='PC1',ylab='PC2', cex.lab=2, cex.axis=2, cex.main=2, cex.sub=2 )
 legend("topleft", 
@@ -102,7 +102,7 @@ volcanoPlot = ggplot(data=resTested,aes(x=log2FoldChange, y=-log10(padj), col=Si
 	scale_colour_manual(values=c("red", "grey") ) + 
 	theme_minimal(base_size = 24) + theme(legend.position='none')
 
-ggsave(volcanoPlot, filename='test/volcanoPlot.pdf' )
+ggsave(volcanoPlot, filename='../test/volcanoPlot.pdf' )
 
 ##
 unique(resTested)	
@@ -121,4 +121,4 @@ sig_barplot = ggplot(data=resTested, aes(x=chr, fill=Sig) ) +
 			  scale_fill_manual(values=c("red", "grey") ) + 
 			  theme_minimal(base_size = 24) 
 			  
-ggsave(sig_barplot, filename='test/barplot_sig.pdf',height=8,width=12)
+ggsave(sig_barplot, filename='../test/barplot_sig.pdf',height=8,width=12)
