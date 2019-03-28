@@ -1,6 +1,6 @@
 # *****install DESeq2*****
-# source("https://bioconductor.org/biocLite.R")
-# biocLite("DESeq2")
+source("https://bioconductor.org/biocLite.R")
+biocLite("DESeq2")
 
 library("DESeq2")
 
