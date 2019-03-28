@@ -4,7 +4,7 @@ args = commandArgs(trailingOnly=TRUE)
 bam <- args[1]
 gtf <- args[2]
 sample <- basename(bam)
-dm <- analyzeDuprates(bam, gtf, TRUE, FALSE, 5, tmpDir = "tempdir")
+dm <- analyzeDuprates(bam, gtf, stranded = 0, FALSE, 5, tmpDir = "tempdir")
 
 dm$mhRate <- (dm$allCountsMulti - dm$allCounts) / dm$allCountsMulti
 bitmap(file=paste("test/dupRadar/", sample, "multimapping_histogram.png"))
