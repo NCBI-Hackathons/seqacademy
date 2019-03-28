@@ -26,5 +26,5 @@ RNASeqoutputSortBam = "test/" + RNASeqoutrun + ".sorted.bam"
 
 for index, individual in enumerate(RNASeqoutputSortBam):
     input = individual
-    output = individual + ".genecount.txt"
+    output = individual.replace(".sorted.bam", "") + ".genecount.txt"
     os.system("htseq-count -m intersection-nonempty -s no -f bam %s %s > %s" % (input, gtf, output))
