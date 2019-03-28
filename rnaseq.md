@@ -44,7 +44,7 @@ Run the code using:
 
 Then run the following command to create the yeast index. The next cell is a bash script. When run, the script downloads sequences for the latest Yeast release from Ensembl. By default, it builds and index for just the base files, since alignments to those sequences are the most useful.  To change which categories are built by this script, edit the CHRS_TO_INDEX variable in the following cell. 
 
-Our next step is to download the sequences for release 84 of the Saccharomyces cerevisiae genome.  We will only download the top-level sequence in order to save time.  
+Our next step is to download the sequences for release 84 of the Saccharomyces cerevisiae genome.  We will only download the top-level sequence in order to save time.
 
 Run the following code by typing the following line into the command line
 and pressing enter:
@@ -69,7 +69,7 @@ Sort the output files and convert them to bam files.
 
 ## 1C. dupRadar
 
-We'll use dupRadar to detect duplicates and count the number of each gene. This script is written in python, but it calls a script written in R `dupRadar.R`.
+We'll use dupRadar to detect duplicates and count of each gene. This script is written in python, but it calls a script written in R `dupRadar.R`.
 
 Run:
 
