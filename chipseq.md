@@ -4,7 +4,6 @@
 1. Alignment
     A. HISAT 
     B. Samtools
-    C. Bedtools
 2. Downstream analysis
     A. Model-Based Analysis for ChIP-Seq
     C. IGV
@@ -69,10 +68,6 @@ Run:
 
 `python scripts/chipseq/samtools.py`
 
-## 1C. Bedtools 
-
-In this tutorial, we'll use Bedtools to extract the intersecting regions of the MACS output between the experimental conditions. The samtools script should also run bedtools to sort the output files.
-
 # 2. Downstream analysis
 ## 2A. Model-Based Analysis for ChIP-Seq
 
@@ -82,13 +77,15 @@ More information about MACS: http://liulab.dfci.harvard.edu/MACS/Download.html
 
 Run the code using:
 
-`python scripts/chipseq/macs.py
+`python scripts/chipseq/macs.py`
 
 For an in-depth discussion of what MACS2 does: https://github.com/taoliu/MACS/wiki/Advanced:-Call-peaks-using-MACS2-subcommands
 
-Then we'll find the intersecting regions between the different experimental conditions. Run the following command:
+## 1C. Bedtools
 
-`bedtools intersect -a test/SRR6703661/SRR6703661_peaks.narrowPeak.sorted -b test/SRR6703663/SRR6703663_peaks.narrowPeak.sorted -u > test/ChIPSeqintersect.bed`
+We'll use Bedtools to extract the intersecting regions of the MACS output between the experimental conditions.
+
+`bedtools intersect -a test/SRR6703661/SRR6703661_peaks.narrowPeak -b test/SRR6703663/SRR6703663_peaks.narrowPeak -u > test/ChIPSeqintersect.bed`
 
 ### 2C. IGV
 A BAM file viewer will allow you to see your reads in an interactive graphical display. There are many different viewers available such as UCSC Genome Browser, Integrative Genomics Viewer (IGV), and NCBI Genome Workbench.
