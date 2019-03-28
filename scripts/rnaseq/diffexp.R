@@ -90,7 +90,7 @@ args = commandArgs(trailingOnly = TRUE)
 
 HTSeqCount <- readHTSeqFile(args[1], args[2])
 
-dds <- DESeqDataSetFromHTSeqCount(sampleTable=HTSeqCount, directory=test, design=~karyotype)
+dds <- DESeqDataSetFromHTSeqCount(sampleTable=HTSeqCount, directory="test", design=~karyotype)
 
 dds <- dds [rowSums(counts(dds))>1,]
 dds <- DESeq(dds)
