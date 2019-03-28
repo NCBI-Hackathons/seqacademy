@@ -68,7 +68,7 @@ Sort the output files and convert them to bam files.
 
 ## 1C. Gene counts
 
-We run a unix-based bash script `loadYeastGeneCounts.sh` to quantify genetic expression over the yeast genome.
+We run an R script `loadYeastGeneCounts.R` to quantify genetic expression over the yeast genome.
 
 Run:
 
