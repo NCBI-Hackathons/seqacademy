@@ -86,11 +86,9 @@ summary(prcomp( t(log2(filtYeastGeneCounts+1) ) ))
 library("DESeq2")
 library("GenomicDataCommons")
 
-args = commandArgs(trailingOnly=TRUE)
+args = commandArgs(trailingOnly = TRUE)
 
-fname = system.file(package="GenomicDataCommons", args[1])
-
-HTSeqcount <- readHTSeqFile(fname)
+HTSeqcount <- readHTSeqFile(args[1])
 
 dds <- DESeqDataSetFromHTSeqCount(HTSeqCount, design=~karyotype)
 
