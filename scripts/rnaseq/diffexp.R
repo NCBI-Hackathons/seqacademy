@@ -30,7 +30,7 @@ save(YeastGeneAnnotation, file='../data/yeastGeneAnnotation.rda')
 
 ## Load yeast gene counts
 
-countFileDirectory = 'test' #Directory that the count files are stored in
+countFileDirectory = '../test' #Directory that the count files are stored in
 countFiles = list.files(countFileDirectory,pattern='genecount.txt') #Find the count files in this directory
 countFiles = paste0(countFileDirectory,'/',countFiles)
 
