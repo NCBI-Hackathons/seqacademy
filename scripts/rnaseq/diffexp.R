@@ -56,7 +56,6 @@ colnames(YeastGeneCounts) <- (basename(names(YeastGeneCountList)))
 YeastGeneCounts = YeastGeneCounts[YeastGeneAnnotation$gene_id,]
 
 expInfo = as.data.frame( data.table::fread('data/RNASeqSRA.tsv') )
-#colnames(YeastGeneCounts) <- NULL
 expInfo= expInfo[match(expInfo$Run, colnames(YeastGeneCounts) ),]
 expInfo$karyotype = factor(expInfo$karyotype, levels=c("Euploid","Aneuploid") )
 expInfo$replicate = factor(expInfo$replicate, levels=c("First","Second",'Third') )
@@ -90,7 +89,7 @@ summary(prcomp( t(log2(filtYeastGeneCounts+1) ) ))
 ## Differential gene expression with DESeq2
 library("DESeq2")
 
-YeastGeneCounts <- as.data.frame.matrix(YeastGeneCounts)
+colnames(YeastGeneCounts) <- NULL
 
 dds <- DESeqDataSetFromMatrix(countData = YeastGeneCounts,
                               colData = expInfo,
@@ -109,7 +108,6 @@ volcanoPlot = ggplot(data=resTested,aes(x=log2FoldChange, y=-log10(padj), col=Si
 	scale_colour_manual(values=c("red", "grey") ) + 
 	theme_minimal(base_size = 24) + theme(legend.position='none')
 
-	
 ggsave(volcanoPlot, filename='test/volcanoPlot.pdf' )
 
 ##
