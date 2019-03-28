@@ -88,9 +88,9 @@ library("GenomicDataCommons")
 
 args = commandArgs(trailingOnly = TRUE)
 
-HTSeqCount <- readHTSeqFile(args[1], args[2])
+sampleTable = data.frame(args[1], fileName = args[2])
 
-dds <- DESeqDataSetFromHTSeqCount(sampleTable=HTSeqCount, directory="test", design=~karyotype)
+dds <- DESeqDataSetFromHTSeqCount(sampleTable=sampleTable, directory=".", design=~karyotype)
 
 dds <- dds [rowSums(counts(dds))>1,]
 dds <- DESeq(dds)
