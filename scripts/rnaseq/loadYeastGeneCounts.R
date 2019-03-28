@@ -41,7 +41,7 @@ countFiles=countFiles[!grepl(pattern="bam",x=countFiles)] #Exclude count files w
 countFiles = paste0(countFileDirectory,'/',countFiles)
 
 ### Next import the count files (individual .txt files) into a single YeastGeneCounts object
-YeastGeneCountList = lapply(countFiles, read.table) #Make a list of the count objects
+YeastGeneCountList = lapply(countFiles) #Make a list of the count objects
 names(YeastGeneCountList) <- countFiles
 YeastGeneCountList = lapply(YeastGeneCountList, function(x){ 
 rownames(x)=x[,1]
@@ -101,10 +101,6 @@ dds <- dds [rowSums(counts(dds))>1,]
 dds <- DESeq(dds)
 res <- results(dds)
 sigRes = res[which(res$padj<0.05),]
-
-#
-install.packages("ggplot2", repos = "http://cran.us.r-project.org")
-library(ggplot2)
 
 resTested = data.frame(res[!is.na(res$padj),])
 resTested$Sig = ifelse(resTested$padj<0.05,"FDR<0.05","FDR>0.05" )
