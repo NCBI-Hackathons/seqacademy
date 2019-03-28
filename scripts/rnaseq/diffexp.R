@@ -84,6 +84,7 @@ summary(prcomp( t(log2(filtYeastGeneCounts+1) ) ))
 
 ## Differential gene expression with DESeq2
 library("DESeq2")
+library("GenomicDataCommons")
 
 args = commandArgs(trailingOnly=TRUE)
 
