@@ -135,7 +135,8 @@ volcanoPlot = ggplot(data=resTested,aes(x=log2FoldChange, y=-log10(padj), col=Si
 	theme_minimal(base_size = 24) + theme(legend.position='none')
 
 	
-ggsave(volcanoPlot,filename='test/volcanoPlot.pdf' )
+ggsave(volcanoPlot, filename='test/volcanoPlot.pdf' )
+
 ##
 unique(resTested)	
 rownames(YeastGeneAnnotation) <- YeastGeneAnnotation$gene_id
@@ -153,4 +154,4 @@ sig_barplot = ggplot(data=resTested, aes(x=chr, fill=Sig) ) +
 			  scale_fill_manual(values=c("red", "grey") ) + 
 			  theme_minimal(base_size = 24) 
 			  
-ggsave(sig_barplot, filename='test/barplot_sig.pdf',height=8,width=12 )
+ggsave(sig_barplot, filename='test/barplot_sig.pdf',height=8,width=12)
