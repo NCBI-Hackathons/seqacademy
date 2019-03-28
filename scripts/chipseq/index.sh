@@ -1,5 +1,6 @@
 mkdir yeast_index
 cd yeast_index
+
 #
 # Downloads sequences for the latest Yeast release from Ensembl.
 #
