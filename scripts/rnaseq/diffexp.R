@@ -66,7 +66,8 @@ expInfo$replicate = factor(expInfo$replicate, levels=c("First","Second",'Third')
 save(YeastGeneCounts, expInfo, file='data/YeastGeneCounts.rda')
 
 filtYeastGeneCounts = YeastGeneCounts[rowSums(YeastGeneCounts)>0,]
-CountsPCA = prcomp( t(log2(filtYeastGeneCounts+1)))$x
+pcainput = t(log2(filtYeastGeneCounts+1))
+CountsPCA = prcomp( pcainput)$x
 
 pdf('test/pca.pdf',height=8,width=8)
 par(mar=c(5,6,4,1)+.5)
