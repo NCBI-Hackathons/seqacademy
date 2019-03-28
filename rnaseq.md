@@ -51,7 +51,7 @@ and pressing enter:
 
 Align the RNA-Seq samples using Hisat.
 
-This step would normally take several hours, but the `-u 2000` part of the command tells Hisat to only align the first 2000 reads. If you want to align all reads, remove this text.
+This step would normally take several hours, but the `-u 2500` part of the command tells Hisat to only align the first 2500 reads. If you want to align all reads, remove this text.
 
 Run the followning:
 
