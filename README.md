@@ -92,7 +92,7 @@ This command will create an environment "tutorial" in which to install the packa
 
 Run the following commands to create the environment. The `-n` flag specifies the name of the environment to create (which is called "tutorial") and the list of packages following the name are the packages that will be installed in the "tutorial" environment. This will most likely take 10-15 minutes.
 
-`conda create -n tutorial jupyter hisat2 multiqc macs2 bioconductor-deseq2 bioconductor-rtracklayer bioconductor-dupradar matplotlib ggplot samtools bioconductor-rsamtools bedtools htseq  --yes`
+`conda create -n tutorial jupyter hisat2 multiqc macs2 bioconductor-deseq2 bioconductor-genomicdatacommons bioconductor-rtracklayer bioconductor-dupradar matplotlib ggplot samtools bioconductor-rsamtools bedtools htseq  --yes`
 
 Then activate the environment with the following command:
 
