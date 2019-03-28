@@ -54,7 +54,7 @@ and pressing enter:
 
 Align the ChIP-Seq samples using Hisat.
 
-This step would normally take several hours, but the `-u 100` part of the command tells Hisat to only align the first 100 reads. If you want to align all reads, remove this text.
+This step would normally take several hours, but the `-u 1000` part of the command tells Hisat to only align the first 1000 reads. If you want to align all reads, remove this text.
 
 Run the code using:
 
