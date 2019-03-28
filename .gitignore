@@ -7,3 +7,5 @@ data/transcript.fa
 data/transcript.fa.gz
 nbconvert
 *.swp
+multiqc_data/
+multiqc_report.html
