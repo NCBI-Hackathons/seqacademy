@@ -4,9 +4,9 @@
 1. Alignment
     A. HISAT 
     B. Samtools
+    C. Bedtools
 2. Downstream analysis
     A. Model-Based Analysis for ChIP-Seq
-    B. Bedtools
     C. IGV
     D. MultiQC
 
@@ -34,11 +34,11 @@ Modules are Python .py files that consist of Python code. Any Python file can be
 
 You may view the code by running:
 
-less scripts/chipseq/setupchipseq.py
+`less scripts/chipseq/setupchipseq.py`
 
 Run the code using:
 
-python scripts/chipseq/setupchipseq.py
+`python scripts/chipseq/setupchipseq.py`
 
 Then run the following command to create the yeast index. The next cell is a bash script. When run, the script downloads sequences for the latest Yeast release from Ensembl. By default, it builds and index for just the base files, since alignments to those sequences are the most useful.  To change which categories are built by this script, edit the CHRS_TO_INDEX variable in the following cell. 
 
@@ -51,7 +51,7 @@ less scripts/chipseq/index.sh
 Run the following code by typing the following line into the command line
 and pressing enter:
 
-bash scripts/chipseq/index.sh
+`bash scripts/chipseq/index.sh`
 
 Align the ChIP-Seq samples using Hisat.
 
@@ -59,7 +59,7 @@ This step would normally take several hours, but the `-u 100` part of the comman
 
 Run the code using:
 
-python scripts/chipseq/runchipseq.py
+`python scripts/chipseq/runchipseq.py`
 
 ## 1B. Samtools 
 
@@ -67,7 +67,9 @@ We'll use samtools to sort the output files and convert them to bam files.
 
 Run:
 
-python scripts/chipseq/samtools.py
+`python scripts/chipseq/samtools.py`
+
+## 1C. Bedtools 
 
 In this tutorial, we'll use Bedtools to extract the intersecting regions of the MACS output between the experimental conditions. The samtools script should also run bedtools to sort the output files.
 
@@ -80,22 +82,13 @@ More information about MACS: http://liulab.dfci.harvard.edu/MACS/Download.html
 
 Run the code using:
 
-python scripts/chipseq/macs.py
+`python scripts/chipseq/macs.py
 
 For an in-depth discussion of what MACS2 does: https://github.com/taoliu/MACS/wiki/Advanced:-Call-peaks-using-MACS2-subcommands
 
-## 2B. Bedtools
-In this tutorial, we'll use Bedtools to extract the intersecting regions of the MACS output between the experimental conditions.
-
-The Bedtools suite of programs is widely used for genomic interval manipulation or "genome algebra". 
-
-First we'll sort the output. The following uses the `sort` command to sort the MACS output.
-
-python scripts/chipseq/sort.py
-
 Then we'll find the intersecting regions between the different experimental conditions. Run the following command:
 
-bedtools intersect -a test/SRR6703661/SRR6703661_peaks.narrowPeak.sorted -b test/SRR6703663/SRR6703663_peaks.narrowPeak.sorted -u > test/ChIPSeqintersect.bed
+`bedtools intersect -a test/SRR6703661/SRR6703661_peaks.narrowPeak.sorted -b test/SRR6703663/SRR6703663_peaks.narrowPeak.sorted -u > test/ChIPSeqintersect.bed`
 
 ### 2C. IGV
 A BAM file viewer will allow you to see your reads in an interactive graphical display. There are many different viewers available such as UCSC Genome Browser, Integrative Genomics Viewer (IGV), and NCBI Genome Workbench.
