@@ -82,9 +82,9 @@ The `--add channels` is an option that is supplied to the command ot tell it to 
 
 Run the following three lines in command line in the following order:
 
-conda config --add channels defaults
-conda config --add channels conda-forge
-conda config --add channels bioconda
+`conda config --add channels defaults`
+`conda config --add channels conda-forge`
+`conda config --add channels bioconda`
 
 In this tutorial we will create an environment named "tutorial" and install the packages in there. Environments offer ways of installing packages in specific environments so they can be managed and run for different specifications. You can create, export, list, remove and update environments that have different versions of Python and/or packages installed in them. Switching or moving between environments is called activating the environment. You can also share an environment file.
 
@@ -92,23 +92,25 @@ This command will create an environment "tutorial" in which to install the packa
 
 Run the following commands to create the environment. The `-n` flag specifies the name of the environment to create (which is called "tutorial") and the list of packages following the name are the packages that will be installed in the "tutorial" environment. This will most likely take 10-15 minutes.
 
-conda create -n tutorial jupyter hisat2 multiqc macs2 bioconductor-deseq matplotlib ggplot samtools bioconductor-rsamtools bedtools htseq  --yes
+`conda create -n tutorial jupyter hisat2 multiqc macs2 bioconductor-deseq matplotlib ggplot samtools bioconductor-rsamtools bedtools htseq  --yes`
 
 Then activate the environment with the following command:
 
-# For Mac and Linux
+For Mac and Linux
 
-source activate tutorial 
+`source activate tutorial` 
 
 or 
 
-conda activate tutorial
+`conda activate tutorial`
 
-# For Windows
+For Windows
 
-activate tutorial
+`activate tutorial`
 
-8. Follow the instructions in rnaseq.md or chipseq.md for the corresponding tutorial.
+# Begin the tutorial
+
+8. Follow the instructions in `rnaseq.md` or `chipseq.md` for the corresponding tutorial.
 
 ## RNA-Seq
 
