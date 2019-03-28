@@ -1,30 +1,15 @@
 # SeqAcademy
-### An easy-to-use, all-in-one jupyter notebook tutorial for the RNA-Seq and ChIP-Seq pipeline
+### An easy-to-use, all-in-one tutorial for the RNA-Seq and ChIP-Seq pipeline
 ![Logo](images/seqacademy.png)
 
-## NOTE: This notebook is in active development, use with caution!
-
-## Contents
-
-[What is SeqAcademy?](#what-is-seqacademy)
-
-[Who is SeqAcademy for?](#who-is-seqacademy-for)
-
-[What does SeqAcademy teach?](#what-does-seqacademy-teach)
-
-[How do I use SeqAcademy?](#how-do-i-use-seqacademy)
-
-##### We recommend at least 4 processors with at least 16 GB RAM each
-##### Total disk space required (includes large SAM files): 350 GB
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1233661.svg)](https://doi.org/10.5281/zenodo.1233661)
+[Ready to get going? Jump to "How do I use SeqAcademy?" and get started!](#how-do-i-use-seqacademy)
 
 <b>Keywords</b>:
 <i>RNA-Seq, ChIP-Seq, alignment, differential gene expression, peak-calling, education, tutorial, pipeline</i>
 
 ## What is SeqAcademy?
 
-SeqAcademy is a user-friendly jupyter notebook-based educational pipeline for RNA-Seq and epigenomic data analysis.
+SeqAcademy is a user-friendly educational pipeline for RNA-Seq and epigenomic data analysis.
 
 RNA-Seq and ChIP-Seq experiments generate large amounts of data and rely on pipelines for efficient analysis.  However, existing tools perform specific portions of the pipeline or offer a complete pipeline solution for the advanced programmer.
 
@@ -36,11 +21,10 @@ SeqAcademy is for students and researchers with little to no bioinformatics expe
 
 ## What does SeqAcademy teach?
 
+<img src="images/pipeline.png" width="700" height="500">
+
 This tutorial works using HISAT2 aligner to align sample reads to a reference.
 
-<img src="images/alignment.png" width="700" height="300">
-
-Then it performs MultiQC to extract quality control information from the aligned reads.
 
 <img src="images/qc.png" width="700" height="300">
 
@@ -49,6 +33,10 @@ It uses quantification methods (such as salmon for RNA-Seq and peak-calling for 
 <img src="images/quantify.png" width="700" height="500">
 
 The output is analyzed (differential gene expression for RNA-Seq and peak analysis for ChIP-seq), and the results are visualized.
+
+<img src="images/alignment.png" width="700" height="300">
+
+Then it performs MultiQC to extract quality control information from the aligned reads.
 
 The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i>. For RNA-Seq, yeast data between euploid and aneuoploid conditions will be compared. For ChIP-Seq, yeast data between 3AT-treated and untreated conditions will be compared.
 
@@ -62,7 +50,7 @@ The model organism for this project is Yeast i.e. <i>Saccharomyces cerevisiae</i
 
 <img src="images/pwdls.png" width="700" height="500">
 
-3. If you'd like to use the tutorial in this current working directory, skip to step 5. Otherwise, you may make a new directory or move to another one. To make a new directory, run `mkdir DIRECTORY` in which DIRECTORY is the name of the directory you'd like to make. To move to another directory, run `cd DIRECTORY` in which DIRECTORY is the name of the DIRECTORY you'd like to move to. To move up a directory, run `cd ..`. 
+3. If you'd like to use the tutorial in this current working directory, skip to step 5. Otherwise, you may make a new directory or move to another one. To make a new directory, run `mkdir DIRECTORY` in which DIRECTORY is the name of the directory you'd like to make. To move to another directory, run `cd DIRECTORY` in which DIRECTORY is the name of the DIRETORY you'd like to move to. To move up a directory, run `cd ..`. 
 
 4. Given the disk space and RAM requirements, it's likely you'll want to use a virtual machine for this tutorial. To connect to a virtual machine, make sure you use your own domain name or IP address. 
 
@@ -76,25 +64,51 @@ If you know the IP you'd like to connect to, run `ssh -L PORTNUMBER:localhost:PO
 
 <img src="images/git.png" width="700" height="300"> 
 
-6. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git` to clone the directory such that you can download the tutorial. 
+6. Run `git clone https://github.com/NCBI-Hackathons/seqacademy.git` to clone the directory such that you can download the tutorial. This will download a folder called `seqacademy`.
 
 <img src="images/gitclone.png" width="700">
 
-7. Run `cd seqacademy` to switch into the seqacademy directory.
+7. Before running any programs, we'll make sure that each software is installed correctly. This tutorial uses Bioconda (https://bioconda.github.io/). Bioconda is a channel for the conda package manager specializing in bioinformatics software. The available packages are listed here: https://bioconda.github.io/recipes.html#recipes.
 
-8. If you are not on a virtual machine, run `jupyter notebook` to launch jupyter notebook from your internet browser.
+You will need to add the bioconda channel as well as the other channels bioconda depends on. It is important to add them in this order so that the priority is set correctly (that is, bioconda is highest priority).
 
-If you are on a virtual machine, run `jupyter notebook --no-browser --port=PORTNUMBER` to launch jupyter notebook. Then copy+paste the URL into a web browser as instructed. 
+The conda-forge channel contains many general-purpose packages not already found in the defaults channel. The r channel is only included due to backward compatibility. It is not mandatory, but without the r channel packages compiled against R 3.3.1 might not work.
 
-If you run into a warning about the connection's privacy, proceed anyway.
+This tutorial uses cells written in python and unix to perform its analyses. Lines that are written in unix are prefixed by an exclamation point.
 
-<img src="images/unsafe1.png" width="750" height="500">
+Select the following cell and run it. To run a cell, select the cell, click "Cell" the upper taskbar, and select "Run Cells". Or click the cell and press shift + enter. Alternatively, the contents of any cell may be copy+pasted into the terminal emulator to run.
 
-<img src="images/unsafe2.png" width="600" height="500">
+The `--add channels` is an option that is supplied to the command ot tell it to add certain channels that you specify. The way it is written, the channels "defaults", "conda-forge", and "bioconda", would be added in that order.
 
-9. Click `tutorial.ipynb` and follow the instructions of the tutorial.
+Run the following three lines in command line in the following order:
 
-<img src="images/jupyter.png" width="400" height="500">
+conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --add channels bioconda
+
+In this tutorial we will create an environment named "tutorial" and install the packages in there. Environments offer ways of installing packages in specific environments so they can be managed and run for different specifications. You can create, export, list, remove and update environments that have different versions of Python and/or packages installed in them. Switching or moving between environments is called activating the environment. You can also share an environment file.
+
+This command will create an environment "tutorial" in which to install the packages used in this tutorial.
+
+Run the following commands to create the environment. The `-n` flag specifies the name of the environment to create (which is called "tutorial") and the list of packages following the name are the packages that will be installed in the "tutorial" environment. This will most likely take 10-15 minutes.
+
+conda create -n tutorial jupyter hisat2 multiqc macs2 bioconductor-deseq matplotlib ggplot samtools bioconductor-rsamtools bedtools htseq  --yes
+
+Then activate the environment with the following command:
+
+# For Mac and Linux
+
+source activate tutorial 
+
+or 
+
+conda activate tutorial
+
+# For Windows
+
+activate tutorial
+
+8. Follow the instructions in rnaseq.md or chipseq.md for the corresponding tutorial.
 
 ## RNA-Seq
 
