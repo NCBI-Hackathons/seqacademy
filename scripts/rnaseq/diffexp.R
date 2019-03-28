@@ -90,6 +90,8 @@ summary(prcomp( t(log2(filtYeastGeneCounts+1) ) ))
 ## Differential gene expression with DESeq2
 biocLite('DESeq2')
 
+library("DESeq2")
+
 dds <- DESeqDataSetFromMatrix(countData = YeastGeneCounts,
                               colData = expInfo,
                               design= ~ karyotype )
