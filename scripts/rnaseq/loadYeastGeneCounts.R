@@ -9,8 +9,8 @@ colnames(gtf2) <- c("chr","source","type","start","end","score","strand","phase"
 
 ## Function provided by https://www.biostars.org/p/272889/
 extract_attributes <- function(gtf_attributes, att_of_interest){
-  att <- strsplit(gtf_attributes, "; ")
-  att <- unlist(att)
+  att <- strsplit(gtf_attributes, "; ");
+  att <- unlist(att);
   if(!is.null(unlist(strsplit(att[grep(att_of_interest, att)], " ")))){
     return( unlist(strsplit(att[grep(att_of_interest, att)], " "))[2])
   }else{
@@ -41,7 +41,7 @@ countFiles=countFiles[!grepl(pattern="bam",x=countFiles)] #Exclude count files w
 countFiles = paste0(countFileDirectory,'/',countFiles)
 
 getrows <- function(x) {
-rownames(x)=x[,1]
+row.names(x)=x[,1]
 x=x[,2,drop=F]
 return(x)
 }
