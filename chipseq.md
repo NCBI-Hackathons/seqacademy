@@ -69,6 +69,8 @@ Run:
 
 python scripts/chipseq/samtools.py
 
+In this tutorial, we'll use Bedtools to extract the intersecting regions of the MACS output between the experimental conditions. The samtools script should also run bedtools to sort the output files.
+
 # 2. Downstream analysis
 ## 2A. Model-Based Analysis for ChIP-Seq
 
