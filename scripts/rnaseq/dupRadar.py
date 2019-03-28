@@ -13,4 +13,6 @@ RNASeqoutputSortBam = "test/" + RNASeqoutrun + ".sorted.bam"
 gtf = "data/Saccharomyces_cerevisiae.R64-1-1.84.gtf"
 
 for bam in RNASeqoutputSortBam:
-    os.system("Rscript scripts/rnaseq/dupRadar.R %s %s" % (bam, gtf)) 
+    cmd = "Rscript scripts/rnaseq/dupRadar.R %s %s" % (bam, gtf)
+    print(cmd)
+    os.system(cmd)
