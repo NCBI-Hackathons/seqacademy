@@ -1,32 +1,3 @@
-## First install bioconductor
-
-## try http:// if https:// URLs are not supported
-source("https://bioconductor.org/biocLite.R")
-biocLite()
-
-## Install rtracklayer, a bioconductor package
-
-## In shell:
-
-#sudo apt-get update
-#sudo apt-get install libxml2-dev
-install.packages('XML')
-
-## In Shell: to install Rcurl
-
-#conda install r-rcurl
-
-#sudo apt install yum
-
-
-biocLite('rtracklayer')
-
-
-
-## Load the yeast genome annotation (gtf file)
-install.packages('rtracklayer')
-library('rtracklayer')
-
 gtf2 <- read.table('data/Saccharomyces_cerevisiae.R64-1-1.84.gtf', header = FALSE, sep = '\t',stringsAsFactors=FALSE)
 
 head(gtf2)
@@ -60,7 +31,7 @@ save(YeastGeneAnnotation, file='data/yeastGeneAnnotation.rda')
 
 ## Load yeast gene counts
 
-countFileDirectory = 'seqacademy/test' #Directory that the count files are stored in
+countFileDirectory = 'test' #Directory that the count files are stored in
 countFiles = list.files(countFileDirectory,pattern='genecount.txt') #Find the count files in this directory
 countFiles=countFiles[!grepl(pattern="bam",x=countFiles)] #Exclude count files with '.bam' in the name
 countFiles = paste0(countFileDirectory,'/',countFiles)
