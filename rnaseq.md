@@ -1,13 +1,13 @@
 # SeqAcademy RNA-Seq Tutorial
 
 # Contents
-1. Alignment
-    A. HISAT 
-    B. Samtools
-    C. dupRadar
-2. Downstream analysis
-    A. Differential expression analysis
-    B. MultiQC
+## 1. Alignment
+### A. HISAT 
+### B. Samtools
+### C. dupRadar
+## 2. Downstream analysis
+### A. Differential expression analysis
+### B. MultiQC
 
 # 1. Alignment
 

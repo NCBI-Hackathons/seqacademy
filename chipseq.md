@@ -1,13 +1,13 @@
 # SeqAcademy ChIP-Seq Tutorial
 
 # Contents
-1. Alignment
-    A. HISAT 
-    B. Samtools
-2. Downstream analysis
-    A. Model-Based Analysis for ChIP-Seq
-    C. IGV
-    D. MultiQC
+## 1. Alignment
+### A. HISAT 
+### B. Samtools
+## 2. Downstream analysis
+### A. Model-Based Analysis for ChIP-Seq
+### B. IGV
+### C. MultiQC
 
 # 1. Alignment
 
@@ -17,7 +17,7 @@ In this tutorial, we'll use HISAT to align the sample reads to a reference genom
 
 The ChIP-Seq data is from https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP132584
 
-The model organism for this project is Yeast i.e. Saccharomyces cerevisiae. For RNA-Seq, yeast data between euploid and aneuoploid conditions will be compared. For ChIP-SEq, yeast data between 3AT-treated and untreated conditions will be compared.
+The model organism for this project is Yeast i.e. Saccharomyces cerevisiae. For RNA-Seq, yeast data between euploid and aneuoploid conditions will be compared. For ChIP-Seq, yeast data between 3AT-treated and untreated conditions will be compared.
 
 The following cell contains python code. 
 
@@ -46,7 +46,7 @@ Our next step is to `cd` into the new directory, yeast_index, and download the s
 
 You may view the code by running:
 
-less scripts/chipseq/index.sh
+`less scripts/chipseq/index.sh`
 
 Run the following code by typing the following line into the command line
 and pressing enter:
@@ -87,6 +87,10 @@ For an in-depth discussion of what MACS2 does: https://github.com/taoliu/MACS/wi
 We'll use Bedtools to extract the intersecting regions of the MACS output between the experimental conditions.
 
 `bedtools intersect -a test/SRR6703661/SRR6703661_peaks.narrowPeak -b test/SRR6703663/SRR6703663_peaks.narrowPeak -u > test/ChIPSeqintersect.bed`
+
+Annotate the peaks using Bedtools.
+
+`bedtools annotate -i Saccharomyces_cerevisiae.R64-1-1.101.gff3 -files test/SRR6703661/SRR6703661_peaks.narrowPeak test/SRR6703663/SRR6703663_peaks.narrowPeak` 
 
 ### 2C. IGV
 A BAM file viewer will allow you to see your reads in an interactive graphical display. There are many different viewers available such as UCSC Genome Browser, Integrative Genomics Viewer (IGV), and NCBI Genome Workbench.
