@@ -90,7 +90,7 @@ We'll use Bedtools to extract the intersecting regions of the MACS output betwee
 
 Annotate the peaks using Bedtools.
 
-`bedtools annotate -i Saccharomyces_cerevisiae.R64-1-1.101.gff3 -files test/SRR6703661/SRR6703661_peaks.narrowPeak test/SRR6703663/SRR6703663_peaks.narrowPeak` 
+`bedtools annotate -i Saccharomyces_cerevisiae.R64-1-1.101.gff3 -files test/SRR6703661/SRR6703661_peaks.narrowPeak test/SRR6703663/SRR6703663_peaks.narrowPeak > test/ChIPSeqannotate.bed` 
 
 ### 2C. IGV
 A BAM file viewer will allow you to see your reads in an interactive graphical display. There are many different viewers available such as UCSC Genome Browser, Integrative Genomics Viewer (IGV), and NCBI Genome Workbench.
